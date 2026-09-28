@@ -3,129 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>小小新闻播报员｜2026年9月28日</title>
+  <title>小小新闻｜2026年9月28日</title>
   <style>
-    :root{--ink:#213547;--cream:#fffaf0;--sun:#ffc857;--coral:#ff6b6b;--mint:#63c7b2;--sky:#72b7e6;--white:#fff;--shadow:0 18px 50px rgba(33,53,71,.14)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:var(--cream);overflow:hidden}
-    .deck{height:100vh;overflow-y:auto;scroll-snap-type:y mandatory}.slide{min-height:100vh;scroll-snap-align:start;display:grid;align-content:center;padding:7vh 7vw;position:relative;isolation:isolate}.slide:after{content:"";position:absolute;right:-10vw;bottom:-18vh;width:42vw;height:42vw;border-radius:50%;background:rgba(255,255,255,.26);z-index:-1}
-    .cover{background:linear-gradient(135deg,#68c7b4 0%,#8bd5c6 52%,#ffd77a 100%)}.weather{background:#fff7dc}.panda{background:#e8f7ec}.letters{background:#fff0dc}.space{background:#e9f1ff}.quiz{background:#fff1f2}.close{background:linear-gradient(135deg,#263a4c,#395c67);color:#fff}
-    .eyebrow{font-size:clamp(15px,1.5vw,22px);font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}.cover h1,.close h2{font-size:clamp(48px,8vw,112px);line-height:.98;margin:0;max-width:1100px}.cover h2{font-size:clamp(24px,3vw,42px);font-weight:600;margin:26px 0 0}.date-pill{display:inline-flex;gap:16px;align-items:center;background:rgba(255,255,255,.82);padding:13px 22px;border-radius:999px;font-size:clamp(17px,2vw,26px);font-weight:700;margin-top:30px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}.card{background:rgba(255,255,255,.9);border-radius:28px;padding:clamp(22px,3vw,44px);box-shadow:var(--shadow)}h2{font-size:clamp(36px,5vw,72px);line-height:1.08;margin:0 0 22px}h3{font-size:clamp(24px,3vw,40px);margin:0 0 16px}p{font-size:clamp(20px,2.2vw,31px);line-height:1.55;margin:10px 0}.big{font-size:clamp(46px,7vw,92px);font-weight:900;color:var(--coral);line-height:1}.mini{font-size:clamp(14px,1.3vw,18px);color:#526677}.prompt{margin-top:26px;padding:18px 22px;border-left:9px solid var(--coral);background:rgba(255,255,255,.8);border-radius:12px;font-weight:800}.photo{width:100%;max-height:62vh;object-fit:cover;border-radius:30px;box-shadow:var(--shadow)}.caption{font-size:14px;color:#536575;margin-top:8px}.weather-art{height:250px;position:relative}.sunball{width:135px;height:135px;background:var(--sun);border-radius:50%;position:absolute;left:12%;top:8%}.cloud{width:260px;height:92px;background:#fff;border-radius:60px;position:absolute;left:25%;top:42%;box-shadow:var(--shadow)}.cloud:before,.cloud:after{content:"";position:absolute;border-radius:50%;background:#fff}.cloud:before{width:110px;height:110px;left:38px;top:-50px}.cloud:after{width:130px;height:130px;right:28px;top:-65px}.rain{position:absolute;left:34%;top:74%;display:flex;gap:34px}.drop{width:12px;height:34px;background:var(--sky);border-radius:12px;transform:rotate(18deg)}
-    .facts{display:grid;gap:14px;margin-top:20px}.fact{background:#fff;border-radius:18px;padding:16px 20px;font-size:clamp(18px,2vw,27px);font-weight:700}.number{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--coral);color:#fff;margin-right:12px}.sources{font-size:13px;line-height:1.5;color:#526677;margin-top:16px}.sources a{color:inherit}.controls{position:fixed;right:22px;bottom:20px;z-index:20;display:flex;gap:10px}.controls button,.controls a{border:0;border-radius:999px;background:#213547;color:#fff;padding:11px 16px;font:700 14px inherit;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}.progress{position:fixed;left:0;top:0;height:7px;background:var(--coral);z-index:30;width:14.28%;transition:width .25s}.speaker{position:absolute;left:7vw;bottom:3vh;font-size:14px;font-weight:700;opacity:.68}.close .speaker{color:#fff}.close a{color:#ffe49a}.badge-row{display:flex;gap:12px;flex-wrap:wrap}.badge{background:#fff;border-radius:999px;padding:10px 16px;font-size:clamp(16px,1.5vw,21px);font-weight:800}.quizbox{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}.choice{background:#fff;border:4px solid transparent;border-radius:22px;padding:22px;text-align:center;font-size:clamp(20px,2.2vw,30px);font-weight:900}.choice:hover{border-color:var(--coral)}
-    @media(max-width:800px){body{overflow:auto}.deck{scroll-snap-type:none}.grid{grid-template-columns:1fr}.photo{max-height:38vh}.slide{padding:72px 24px 90px}.quizbox{grid-template-columns:1fr}.controls{right:12px;bottom:12px}.speaker{left:24px}.cover h1{font-size:56px}}
-    @media print{body{overflow:visible}.deck{height:auto;overflow:visible}.slide{break-after:page;min-height:100vh}.controls,.progress{display:none}}
+    :root{--ink:#26384a;--red:#ff6475;--yellow:#ffd75e;--blue:#78ccef;--green:#86d7a8;--white:#fff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",sans-serif;overflow:hidden}.deck{height:100vh;overflow-y:auto;scroll-snap-type:y mandatory}.page{min-height:100vh;scroll-snap-align:start;padding:6vh 7vw;display:grid;align-content:center;position:relative}.weather{background:#fff5cc}.news{background:#eaf8ef}.grid{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}.tag{font-size:clamp(17px,2vw,25px);font-weight:900;color:#db475a}.date{display:inline-block;background:#fff;border-radius:999px;padding:12px 22px;font-size:clamp(18px,2vw,27px);font-weight:900;box-shadow:0 10px 24px #26384a18}h1{font-size:clamp(54px,8vw,106px);line-height:1.04;margin:22px 0}h2{font-size:clamp(44px,6vw,82px);line-height:1.08;margin:0 0 20px}p{font-size:clamp(24px,3vw,40px);line-height:1.45;margin:12px 0}.red{color:var(--red)}.tip{display:inline-block;background:#fff;border-radius:24px;padding:17px 24px;font-weight:900;margin-top:18px}.photo-wrap{position:relative}.photo{width:100%;max-height:68vh;object-fit:cover;border:12px solid #fff;border-radius:38px;box-shadow:0 22px 45px #26384a28}.sticker{position:absolute;right:-18px;top:-22px;background:var(--yellow);padding:15px 20px;border-radius:22px;transform:rotate(5deg);font-size:clamp(18px,2vw,27px);font-weight:900;animation:bob 1.8s ease-in-out infinite}.sky{height:320px;position:relative}.sun{position:absolute;right:6%;top:0;width:130px;height:130px;border-radius:50%;background:var(--yellow)}.cloud{position:absolute;left:8%;top:34%;width:78%;height:115px;border-radius:70px;background:#fff;box-shadow:0 18px 35px #26384a22;animation:float 3s ease-in-out infinite}.cloud:before,.cloud:after{content:"";position:absolute;border-radius:50%;background:#fff}.cloud:before{width:135px;height:135px;left:15%;top:-62px}.cloud:after{width:165px;height:165px;right:14%;top:-80px}.drops{position:absolute;left:18%;top:74%;display:flex;gap:60px}.drop{width:18px;height:46px;border-radius:16px;background:var(--blue);transform:rotate(15deg);animation:rain 1.2s infinite}.drop:nth-child(2){animation-delay:.3s}.drop:nth-child(3){animation-delay:.6s}.drop:nth-child(4){animation-delay:.9s}.say{position:absolute;left:7vw;bottom:2.5vh;font-size:15px;font-weight:800;color:#526576}.source{font-size:13px;color:#617080}.source a{color:inherit}.nav{position:fixed;right:18px;bottom:18px;z-index:5;display:flex;gap:8px}.nav a,.nav button{border:0;border-radius:999px;background:var(--ink);color:#fff;padding:12px 17px;text-decoration:none;font:800 14px inherit;cursor:pointer}@keyframes float{50%{transform:translateX(12px)}}@keyframes rain{0%{transform:translateY(-5px) rotate(15deg);opacity:.3}70%{opacity:1}100%{transform:translateY(18px) rotate(15deg);opacity:0}}@keyframes bob{50%{transform:rotate(2deg) translateY(-7px)}}@media(max-width:800px){body{overflow:auto}.deck{scroll-snap-type:none}.grid{grid-template-columns:1fr}.page{padding:70px 24px 100px}.sky{height:230px}.photo{max-height:42vh}.say{left:24px}.nav{right:10px;bottom:10px}}
   </style>
 </head>
 <body>
-  <div class="progress" id="progress"></div>
-  <main class="deck" id="deck" aria-label="今日新闻幻灯片">
-    <section class="slide cover">
-      <div class="eyebrow">幼儿园大班 · 今日分享</div>
-      <h1>小小新闻<br>播报员</h1>
-      <h2>熊猫旅行、科学家的信、太空猜图</h2>
-      <div class="date-pill">2026年9月28日　星期一　上海</div>
-      <div class="speaker">开场建议：大家早上好，今天我带来了三个有趣的消息。</div>
-    </section>
-
-    <section class="slide weather">
-      <div class="grid">
-        <div>
-          <div class="eyebrow">先看看窗外</div>
-          <h2>上海今天有小阵雨</h2>
-          <div class="badge-row"><span class="badge">23–25℃</span><span class="badge">东北风</span><span class="badge">带好雨具</span></div>
-          <p class="prompt">问问大家：下雨天出门，我们要带什么？</p>
-          <p class="sources">天气数据：<a href="https://wttr.in/Shanghai?format=j1">wttr.in 上海</a>，获取于2026年9月28日。</p>
-        </div>
-        <div class="card weather-art" aria-label="太阳、云和雨滴插画">
-          <div class="sunball"></div><div class="cloud"></div><div class="rain"><i class="drop"></i><i class="drop"></i><i class="drop"></i><i class="drop"></i></div>
-        </div>
+<main class="deck">
+  <section class="page weather">
+    <div class="grid">
+      <div>
+        <div class="tag">小小新闻 · 第1页</div>
+        <div class="date">9月28日　星期一　上海</div>
+        <h1>今天有<span class="red">小雨</span></h1>
+        <p><strong>23—25℃</strong></p>
+        <p class="tip">带小伞，小心地上滑。</p>
       </div>
-      <div class="speaker">用时约40秒：说温度，再提醒同学注意脚下湿滑。</div>
-    </section>
+      <div class="sky" aria-label="会动的云和雨滴"><div class="sun"></div><div class="cloud"></div><div class="drops"><i class="drop"></i><i class="drop"></i><i class="drop"></i><i class="drop"></i></div></div>
+    </div>
+    <div class="say">小主播：大家早上好！今天上海有小雨。</div>
+  </section>
 
-    <section class="slide panda">
-      <div class="grid">
-        <div><img class="photo" src="assets/pandas.jpg" alt="大熊猫平平和福双抵达亚特兰大动物园的新闻画面"><div class="caption">图片来源：央视新闻画面</div></div>
-        <div>
-          <div class="eyebrow">动物新闻</div>
-          <h2>两只大熊猫搬新家</h2>
-          <p><strong>平平</strong>和<strong>福双</strong>已经到达美国亚特兰大动物园。</p>
-          <p>它们要先体检、熟悉新家，之后才和游客见面。</p>
-          <p class="prompt">一起想：如果你是熊猫饲养员，会准备什么？</p>
-          <p class="sources">来源：<a href="https://www.news.cn/world/20260928/5455e6fe06bb4da88b0177c51b8edbea/c.html">新华社，2026-09-28</a></p>
-        </div>
+  <section class="page news">
+    <div class="grid">
+      <div class="photo-wrap"><img class="photo" src="assets/pandas.jpg" alt="今天到新家的两只大熊猫"><div class="sticker">到新家啦！</div></div>
+      <div>
+        <div class="tag">今天的新鲜事 · 第2页</div>
+        <h2>熊猫坐飞机</h2>
+        <p><strong>平平</strong>和<strong>福双</strong><br>到了新家。</p>
+        <p>它们先休息，<br>过些天再见大家。</p>
+        <p class="tip">你想送熊猫什么礼物？</p>
+        <p class="source">新闻：<a href="https://www.news.cn/world/20260928/5455e6fe06bb4da88b0177c51b8edbea/c.html">新华社，2026年9月28日</a>　图片：央视新闻</p>
       </div>
-      <div class="speaker">用时约1分30秒：先介绍名字，再让两位同学回答问题。</div>
-    </section>
-
-    <section class="slide letters">
-      <div class="grid">
-        <div>
-          <div class="eyebrow">科学新闻</div>
-          <h2>科学家给孩子写信</h2>
-          <div class="facts">
-            <div class="fact"><span class="number">1</span>好奇地看看海底有什么</div>
-            <div class="fact"><span class="number">2</span>去发现地球的小秘密</div>
-            <div class="fact"><span class="number">3</span>数学难，也要勇敢想一想</div>
-          </div>
-          <p class="prompt">你最想问科学家什么问题？</p>
-          <p class="sources">来源：<a href="https://www.cas.cn/cm/202609/t20260928_5121091.shtml">中国科学院转人民日报，2026-09-28</a></p>
-        </div>
-        <div><img class="photo" src="assets/science-letters.jpg" alt="写给爱科学的孩子们的文章配图"><div class="caption">图片来源：中国科学院</div></div>
-      </div>
-      <div class="speaker">用时约1分30秒：三句话慢慢说，邀请一位同学提问。</div>
-    </section>
-
-    <section class="slide space">
-      <div class="grid">
-        <div><img class="photo" src="assets/satellite-puzzler.jpg" alt="NASA卫星拍摄的瓦斯克斯岩"><div class="caption">图片来源：NASA Earth Observatory / Landsat 9</div></div>
-        <div>
-          <div class="eyebrow">太空看地球</div>
-          <h2>卫星拍到什么？</h2>
-          <p>这是卫星从太空拍下的<strong>美国瓦斯克斯岩</strong>。</p>
-          <p>深绿色是比较湿润的植物，灰色弯线是一条公路。</p>
-          <p class="prompt">先别说答案：你觉得它像树叶、恐龙，还是一幅画？</p>
-          <p class="sources">来源：<a href="https://science.nasa.gov/earth/earth-observatory/september-2026-satellite-puzzler/">NASA Earth Observatory</a></p>
-        </div>
-      </div>
-      <div class="speaker">用时约1分30秒：遮住答案先猜，再告诉大家卫星也会“拍照”。</div>
-    </section>
-
-    <section class="slide quiz">
-      <div class="eyebrow">记忆挑战</div>
-      <h2>今天你记住了吗？</h2>
-      <div class="quizbox">
-        <div class="choice">熊猫叫什么名字？</div>
-        <div class="choice">今天出门带什么？</div>
-        <div class="choice">卫星从哪里拍地球？</div>
-      </div>
-      <p class="prompt">小主播可以请三位同学，每人回答一道题。</p>
-      <div class="speaker">用时约1分钟：回答后及时说“谢谢你的回答”。</div>
-    </section>
-
-    <section class="slide close">
-      <div class="eyebrow">今天的关键词</div>
-      <h2>好奇 · 观察<br>勇敢表达</h2>
-      <p>谢谢大家听我分享！</p>
-      <p class="mini">新闻事实与图片版权归原发布机构所有，仅用于课堂学习。</p>
-      <div class="speaker">结束建议：鞠躬，说“我的分享结束了，谢谢大家”。</div>
-    </section>
-  </main>
-  <nav class="controls" aria-label="翻页控制">
-    <a href="今日新闻-2026-09-28.pptx">下载PPT</a>
-    <button type="button" id="prev">上一页</button>
-    <button type="button" id="next">下一页</button>
-  </nav>
-  <script>
-    const deck=document.getElementById('deck');
-    const slides=[...document.querySelectorAll('.slide')];
-    const progress=document.getElementById('progress');
-    let current=0;
-    function go(delta){current=Math.max(0,Math.min(slides.length-1,current+delta));slides[current].scrollIntoView({behavior:'smooth'});}
-    document.getElementById('prev').onclick=()=>go(-1);
-    document.getElementById('next').onclick=()=>go(1);
-    deck.addEventListener('scroll',()=>{const idx=Math.round(deck.scrollTop/window.innerHeight);current=Math.max(0,Math.min(slides.length-1,idx));progress.style.width=((current+1)/slides.length*100)+'%';});
-    addEventListener('keydown',e=>{if(['ArrowDown','ArrowRight',' '].includes(e.key)){e.preventDefault();go(1)}if(['ArrowUp','ArrowLeft'].includes(e.key)){e.preventDefault();go(-1)}});
-  </script>
+    </div>
+    <div class="say">小主播：我的分享说完了，谢谢大家！</div>
+  </section>
+</main>
+<nav class="nav"><a href="今日新闻-2026-09-28.pptx">打开PPT</a><button id="prev">上一页</button><button id="next">下一页</button></nav>
+<script>
+  const p=[...document.querySelectorAll('.page')];let n=0;function go(x){n=Math.max(0,Math.min(1,n+x));p[n].scrollIntoView({behavior:'smooth'})}
+  document.getElementById('prev').onclick=()=>go(-1);document.getElementById('next').onclick=()=>go(1);
+  addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();go(1)}if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();go(-1)}});
+</script>
 </body>
 </html>
