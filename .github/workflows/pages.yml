@@ -1,5 +1,6 @@
 name: Deploy daily news to GitHub Pages
 
+# Publishes the latest classroom-ready web deck.
 on:
   push:
     branches: [main]
