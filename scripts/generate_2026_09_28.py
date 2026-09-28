@@ -9,19 +9,19 @@ from pptx.enum.text import MSO_AUTO_SIZE, PP_ALIGN
 from pptx.oxml.ns import qn
 from pptx.util import Inches, Pt
 
-ROOT = Path(__file__).resolve().parents[1]
-PHOTO = ROOT / "daily-news/2026-09-28/assets/pandas.jpg"
-OUT = ROOT / "outputs/今日新闻-2026-09-28.pptx"
-WEB = ROOT / "daily-news/2026-09-28/今日新闻-2026-09-28.pptx"
-FONT = "PingFang SC"
-C = {"ink":RGBColor(0x26,0x38,0x4A),"red":RGBColor(0xFF,0x64,0x75),"yellow":RGBColor(0xFF,0xD7,0x5E),"blue":RGBColor(0x78,0xCC,0xEF),"greenbg":RGBColor(0xEA,0xF8,0xEF),"weather":RGBColor(0xFF,0xF5,0xCC),"white":RGBColor(0xFF,0xFF,0xFF),"muted":RGBColor(0x60,0x70,0x80)}
-BUDGET={"title":18,"body":30,"tip":22,"small":70}
+ROOT=Path(__file__).resolve().parents[1]
+ASSETS=ROOT/"daily-news/2026-09-28/assets"
+OUT=ROOT/"outputs/今日新闻-2026-09-28.pptx"
+WEB=ROOT/"daily-news/2026-09-28/今日新闻-2026-09-28.pptx"
+FONT="PingFang SC"
+C={"ink":RGBColor(0x26,0x38,0x4A),"red":RGBColor(0xFF,0x64,0x75),"yellow":RGBColor(0xFF,0xD7,0x5E),"green":RGBColor(0xEA,0xF8,0xEF),"blue":RGBColor(0xEA,0xF5,0xFF),"peach":RGBColor(0xFF,0xF0,0xE7),"cream":RGBColor(0xFF,0xF9,0xE8),"white":RGBColor(0xFF,0xFF,0xFF),"muted":RGBColor(0x61,0x70,0x80)}
+BUDGET={"title":18,"body":38,"tip":22,"small":80}
 
-def guard(text,key):
-    if len(text)>BUDGET[key]: raise ValueError(f"text too long for {key}: {text}")
-    return text
+def guard(value,key):
+    if len(value)>BUDGET[key]: raise ValueError(f"text too long for {key}: {value}")
+    return value
 
-def font(run,size,color,bold=False):
+def set_font(run,size,color,bold=False):
     run.font.name=FONT; run.font.size=Pt(size); run.font.bold=bold; run.font.color.rgb=color
     rpr=run._r.get_or_add_rPr(); ea=rpr.find(qn("a:ea"))
     if ea is None: ea=rpr.makeelement(qn("a:ea"),{"typeface":FONT}); rpr.append(ea)
@@ -30,22 +30,24 @@ def font(run,size,color,bold=False):
 def text(slide,value,x,y,w,h,size,color=None,bold=False,align=PP_ALIGN.LEFT,budget="body"):
     value=guard(value,budget); box=slide.shapes.add_textbox(Inches(x),Inches(y),Inches(w),Inches(h)); tf=box.text_frame
     tf.word_wrap=True; tf.auto_size=MSO_AUTO_SIZE.NONE; tf.margin_left=Inches(.04); tf.margin_right=Inches(.04); tf.margin_top=Inches(.03); tf.margin_bottom=Inches(.03)
-    p=tf.paragraphs[0]; p.alignment=align; p.space_after=Pt(0); r=p.add_run(); r.text=value; font(r,size,color or C["ink"],bold); return box
+    p=tf.paragraphs[0]; p.alignment=align; p.space_after=Pt(0); r=p.add_run(); r.text=value; set_font(r,size,color or C["ink"],bold); return box
 
-def shape(slide,kind,x,y,w,h,fill,line=None):
-    s=slide.shapes.add_shape(kind,Inches(x),Inches(y),Inches(w),Inches(h)); s.fill.solid(); s.fill.fore_color.rgb=fill
-    if line: s.line.color.rgb=line
-    else: s.line.fill.background()
-    s.shadow.inherit=False; return s
+def shape(slide,kind,x,y,w,h,fill):
+    s=slide.shapes.add_shape(kind,Inches(x),Inches(y),Inches(w),Inches(h)); s.fill.solid(); s.fill.fore_color.rgb=fill; s.line.fill.background(); s.shadow.inherit=False; return s
 
-def rect(slide,x,y,w,h,fill,round=True): return shape(slide,MSO_SHAPE.ROUNDED_RECTANGLE if round else MSO_SHAPE.RECTANGLE,x,y,w,h,fill)
+def rect(slide,x,y,w,h,fill,rounded=True): return shape(slide,MSO_SHAPE.ROUNDED_RECTANGLE if rounded else MSO_SHAPE.RECTANGLE,x,y,w,h,fill)
 
-def photo_cover(slide,path,x,y,w,h):
+def photo(slide,path,x,y,w,h):
     with Image.open(path) as im: iw,ih=im.size
     pic=slide.shapes.add_picture(str(path),Inches(x),Inches(y),width=Inches(w),height=Inches(h)); fr=w/h; ir=iw/ih
-    if ir>fr: crop=(1-fr/ir)/2; pic.crop_left=crop; pic.crop_right=crop
-    elif ir<fr: crop=(1-ir/fr)/2; pic.crop_top=crop; pic.crop_bottom=crop
+    if ir>fr: c=(1-fr/ir)/2; pic.crop_left=c; pic.crop_right=c
+    elif ir<fr: c=(1-ir/fr)/2; pic.crop_top=c; pic.crop_bottom=c
     return pic
+
+def meta(slide):
+    rect(slide,8.15,.34,4.5,.52,C["white"]); text(slide,"9月28日 星期一　上海 小雨 23—25℃",8.33,.46,4.15,.23,12,C["ink"],True,PP_ALIGN.CENTER,"small")
+
+def source(slide,value): text(slide,value,.65,7.05,9.8,.2,8,C["muted"],False,budget="small")
 
 def save_pptx(prs,path):
     prs.save(path); tmp=str(path)+".tmp"
@@ -58,32 +60,31 @@ def save_pptx(prs,path):
             zout.writestr(item,data)
     os.replace(tmp,path)
 
+def add_card(slide,x,bg,image,title,body,question,num):
+    rect(slide,x,1.25,5.8,5.45,bg); photo(slide,image,x+.16,1.42,5.48,2.72)
+    rect(slide,x+.32,1.58,.55,.55,C["yellow"]); text(slide,str(num),x+.32,1.72,.55,.24,15,C["ink"],True,PP_ALIGN.CENTER,"small")
+    text(slide,title,x+.28,4.35,5.2,.5,25,C["ink"],True,budget="title")
+    text(slide,body,x+.28,4.93,5.2,.7,19,C["ink"],False,budget="body")
+    text(slide,question,x+.28,5.87,5.2,.35,16,C["red"],True,budget="tip")
+
 def build():
     prs=Presentation(); prs.slide_width=Inches(13.333); prs.slide_height=Inches(7.5)
-    # Page 1: weather
-    s=prs.slides.add_slide(prs.slide_layouts[6]); rect(s,0,0,13.333,7.5,C["weather"],False)
-    text(s,"小小新闻 · 第1页",.72,.55,5,.4,14,C["red"],True,budget="small")
-    rect(s,.72,1.1,4.85,.65,C["white"]); text(s,"9月28日  星期一  上海",.95,1.25,4.4,.3,17,C["ink"],True,budget="small")
-    text(s,"今天有小雨",.7,2.05,6.5,1.2,48,C["ink"],True,budget="title")
-    text(s,"23—25℃",.72,3.45,4.2,.8,34,C["red"],True,budget="body")
-    rect(s,.72,4.55,5.45,.82,C["white"]); text(s,"带小伞，小心地上滑。",.97,4.76,5,.36,21,C["ink"],True,budget="tip")
-    shape(s,MSO_SHAPE.OVAL,9.9,.75,1.45,1.45,C["yellow"])
-    cloud=rect(s,7.2,2.75,4.5,1.35,C["white"])
-    for x,y,d in [(7.75,2.18,1.45),(9.0,1.88,1.8)]: shape(s,MSO_SHAPE.OVAL,x,y,d,d,C["white"])
-    for x in (7.75,8.7,9.65,10.6): shape(s,MSO_SHAPE.TEAR,x,4.35,.28,.58,C["blue"])
-    text(s,"大家早上好！今天上海有小雨。",.76,6.82,8.7,.3,12,C["muted"],True,budget="small")
-    text(s,"1/2",11.7,6.82,.7,.3,11,C["muted"],True,PP_ALIGN.RIGHT,"small")
-    # Page 2: real-time panda news
-    s=prs.slides.add_slide(prs.slide_layouts[6]); rect(s,0,0,13.333,7.5,C["greenbg"],False)
-    photo_cover(s,PHOTO,.62,.6,6.35,5.45); rect(s,5.34,.38,1.9,.68,C["yellow"]); text(s,"到新家啦！",5.5,.56,1.58,.3,17,C["ink"],True,PP_ALIGN.CENTER,"tip")
-    text(s,"今天的新鲜事",7.45,.65,4.7,.4,14,C["red"],True,budget="small")
-    text(s,"熊猫坐飞机",7.38,1.16,5.05,.88,34,C["ink"],True,budget="title")
-    text(s,"平平和福双\n到了新家。",7.42,2.28,4.8,1.35,27,C["ink"],True,budget="body")
-    text(s,"它们先休息，\n过些天再见大家。",7.42,3.92,4.8,1.25,23,C["ink"],False,budget="body")
-    rect(s,7.42,5.43,4.45,.78,C["white"]); text(s,"你想送熊猫什么礼物？",7.64,5.63,4.05,.32,18,C["ink"],True,budget="tip")
-    text(s,"新闻：新华社 2026年9月28日　图片：央视新闻",.68,6.35,8.5,.25,9,C["muted"],False,budget="small")
-    text(s,"我的分享说完了，谢谢大家！",.68,6.82,8.7,.3,12,C["muted"],True,budget="small")
-    text(s,"2/2",11.7,6.82,.7,.3,11,C["muted"],True,PP_ALIGN.RIGHT,"small")
+    # Slide 1: two current stories
+    s=prs.slides.add_slide(prs.slide_layouts[6]); rect(s,0,0,13.333,7.5,C["cream"],False)
+    text(s,"小小新闻",.65,.35,4.3,.55,28,C["ink"],True,budget="title"); meta(s)
+    add_card(s,.62,C["green"],ASSETS/"pandas.jpg","熊猫坐飞机","平平和福双到了新家。\n它们先要好好休息。","你想送熊猫什么礼物？",1)
+    add_card(s,6.9,C["blue"],ASSETS/"science-letters.jpg","一封科学来信","科学家写信给小朋友：\n多问为什么，勇敢想一想。","你最想问什么？",2)
+    source(s,"新闻：新华社、中国科学院 · 2026年9月28日　图片：央视新闻、中国科学院")
+    text(s,"1/2",11.75,7.02,.65,.22,9,C["muted"],True,PP_ALIGN.RIGHT,"small")
+    # Slide 2: one image-led story
+    s=prs.slides.add_slide(prs.slide_layouts[6]); rect(s,0,0,13.333,7.5,C["cream"],False)
+    text(s,"小小新闻",.65,.35,4.3,.55,28,C["ink"],True,budget="title"); meta(s)
+    photo(s,ASSETS/"tide.jpg",.65,1.28,7.3,5.15); rect(s,.88,1.52,.58,.58,C["yellow"]); text(s,"3",.88,1.67,.58,.24,16,C["ink"],True,PP_ALIGN.CENTER,"small")
+    text(s,"潮水像蝴蝶",8.42,1.65,4.1,.78,32,C["ink"],True,budget="title")
+    text(s,"三股潮水碰在一起，\n像一只大大的蝴蝶。",8.42,2.8,4.1,1.25,24,C["ink"],False,budget="body")
+    rect(s,8.42,4.5,4.15,.82,C["white"]); text(s,"你觉得它还像什么？",8.64,4.72,3.72,.32,18,C["red"],True,budget="tip")
+    text(s,"选一条你最喜欢的新闻讲给大家听。",8.42,5.75,4.0,.6,15,C["muted"],True,budget="body")
+    source(s,"新闻与图片：中新网 · 2026年9月27日"); text(s,"2/2",11.75,7.02,.65,.22,9,C["muted"],True,PP_ALIGN.RIGHT,"small")
     return prs
 
 def main():
