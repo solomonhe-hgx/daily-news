@@ -10,9 +10,9 @@ from pptx.oxml.ns import qn
 from pptx.util import Inches, Pt
 
 ROOT=Path(__file__).resolve().parents[1]
-ASSETS=ROOT/"daily-news/2026-09-28/assets"
-OUT=ROOT/"outputs/今日新闻-2026-09-28.pptx"
-WEB=ROOT/"daily-news/2026-09-28/今日新闻-2026-09-28.pptx"
+ASSETS=ROOT/"daily-news/2026-09-29/assets"
+OUT=ROOT/"outputs/今日新闻-2026-09-29.pptx"
+WEB=ROOT/"daily-news/2026-09-29/今日新闻-2026-09-29.pptx"
 FONT="PingFang SC"
 C={"ink":RGBColor(0x26,0x38,0x4A),"red":RGBColor(0xFF,0x64,0x75),"yellow":RGBColor(0xFF,0xD7,0x5E),"green":RGBColor(0xEA,0xF8,0xEF),"blue":RGBColor(0xEA,0xF5,0xFF),"peach":RGBColor(0xFF,0xF0,0xE7),"cream":RGBColor(0xFF,0xF9,0xE8),"white":RGBColor(0xFF,0xFF,0xFF),"muted":RGBColor(0x61,0x70,0x80)}
 BUDGET={"title":18,"body":38,"tip":22,"small":80}
@@ -45,7 +45,7 @@ def photo(slide,path,x,y,w,h):
     return pic
 
 def meta(slide):
-    rect(slide,8.15,.34,4.5,.52,C["white"]); text(slide,"9月28日 星期一　上海 小雨 23—25℃",8.33,.46,4.15,.23,12,C["ink"],True,PP_ALIGN.CENTER,"small")
+    rect(slide,7.35,.34,5.3,.52,C["white"]); text(slide,"9月29日 星期二　上海 阴天 21—25℃，可能有小雨",7.53,.46,4.95,.23,11,C["ink"],True,PP_ALIGN.CENTER,"small")
 
 def source(slide,value): text(slide,value,.65,7.05,9.8,.2,8,C["muted"],False,budget="small")
 
@@ -81,8 +81,8 @@ def build():
     s=prs.slides.add_slide(prs.slide_layouts[6]); rect(s,0,0,13.333,7.5,C["cream"],False)
     text(s,"小小新闻",.65,.35,4.3,.55,28,C["ink"],True,budget="title"); meta(s)
     photo(s,ASSETS/"tide-three-waves.jpg",.65,1.28,7.3,5.15); rect(s,.88,1.52,.58,.58,C["yellow"]); text(s,"3",.88,1.67,.58,.24,16,C["ink"],True,PP_ALIGN.CENTER,"small")
-    rect(s,1.02,5.72,6.55,.42,C["ink"]); text(s,"图里：三条白色浪花正在碰到一起",1.2,5.82,6.2,.2,12,C["white"],True,PP_ALIGN.CENTER,"tip")
-    text(s,"三股潮水相遇",8.42,1.65,4.1,.78,32,C["ink"],True,budget="title")
+    rect(s,1.02,5.72,6.55,.42,C["ink"]); text(s,"图里：钱塘江三条白色浪花正在碰到一起",1.2,5.82,6.2,.2,12,C["white"],True,PP_ALIGN.CENTER,"tip")
+    text(s,"钱塘江三股潮水相遇",8.42,1.52,4.1,1.05,27,C["ink"],True,budget="title")
     text(s,"三条浪花碰在一起，\n像一只大大的蝴蝶。",8.42,2.8,4.1,1.25,24,C["ink"],False,budget="body")
     rect(s,8.42,4.5,4.15,.82,C["white"]); text(s,"你觉得它还像什么？",8.64,4.72,3.72,.32,18,C["red"],True,budget="tip")
     text(s,"选一条你最喜欢的新闻讲给大家听。",8.42,5.75,4.0,.6,15,C["muted"],True,budget="body")
