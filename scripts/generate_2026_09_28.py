@@ -60,9 +60,10 @@ def save_pptx(prs,path):
             zout.writestr(item,data)
     os.replace(tmp,path)
 
-def add_card(slide,x,bg,image,title,body,question,num):
+def add_card(slide,x,bg,image,image_note,title,body,question,num):
     rect(slide,x,1.25,5.8,5.45,bg); photo(slide,image,x+.16,1.42,5.48,2.72)
     rect(slide,x+.32,1.58,.55,.55,C["yellow"]); text(slide,str(num),x+.32,1.72,.55,.24,15,C["ink"],True,PP_ALIGN.CENTER,"small")
+    rect(slide,x+.38,3.65,5.05,.38,C["ink"]); text(slide,image_note,x+.5,3.74,4.8,.18,10,C["white"],True,PP_ALIGN.CENTER,"tip")
     text(slide,title,x+.28,4.35,5.2,.5,25,C["ink"],True,budget="title")
     text(slide,body,x+.28,4.93,5.2,.7,19,C["ink"],False,budget="body")
     text(slide,question,x+.28,5.87,5.2,.35,16,C["red"],True,budget="tip")
@@ -72,19 +73,20 @@ def build():
     # Slide 1: two current stories
     s=prs.slides.add_slide(prs.slide_layouts[6]); rect(s,0,0,13.333,7.5,C["cream"],False)
     text(s,"小小新闻",.65,.35,4.3,.55,28,C["ink"],True,budget="title"); meta(s)
-    add_card(s,.62,C["green"],ASSETS/"pandas.jpg","熊猫坐飞机","平平和福双到了新家。\n它们先要好好休息。","你想送熊猫什么礼物？",1)
-    add_card(s,6.9,C["blue"],ASSETS/"science-letters.jpg","一封科学来信","科学家写信给小朋友：\n多问为什么，勇敢想一想。","你最想问什么？",2)
+    add_card(s,.62,C["green"],ASSETS/"pandas.jpg","图里：熊猫的新家","熊猫坐飞机","平平和福双到了新家。\n它们先要好好休息。","你想送熊猫什么礼物？",1)
+    add_card(s,6.9,C["blue"],ASSETS/"science-letters.jpg","图里：科学家爷爷在海上研究海底","科学家写来一封信","他想告诉小朋友：\n多问为什么，勇敢找答案。","你想问他什么？",2)
     source(s,"新闻：新华社、中国科学院 · 2026年9月28日　图片：央视新闻、中国科学院")
     text(s,"1/2",11.75,7.02,.65,.22,9,C["muted"],True,PP_ALIGN.RIGHT,"small")
     # Slide 2: one image-led story
     s=prs.slides.add_slide(prs.slide_layouts[6]); rect(s,0,0,13.333,7.5,C["cream"],False)
     text(s,"小小新闻",.65,.35,4.3,.55,28,C["ink"],True,budget="title"); meta(s)
-    photo(s,ASSETS/"tide.jpg",.65,1.28,7.3,5.15); rect(s,.88,1.52,.58,.58,C["yellow"]); text(s,"3",.88,1.67,.58,.24,16,C["ink"],True,PP_ALIGN.CENTER,"small")
-    text(s,"潮水像蝴蝶",8.42,1.65,4.1,.78,32,C["ink"],True,budget="title")
-    text(s,"三股潮水碰在一起，\n像一只大大的蝴蝶。",8.42,2.8,4.1,1.25,24,C["ink"],False,budget="body")
+    photo(s,ASSETS/"tide-three-waves.jpg",.65,1.28,7.3,5.15); rect(s,.88,1.52,.58,.58,C["yellow"]); text(s,"3",.88,1.67,.58,.24,16,C["ink"],True,PP_ALIGN.CENTER,"small")
+    rect(s,1.02,5.72,6.55,.42,C["ink"]); text(s,"图里：三条白色浪花正在碰到一起",1.2,5.82,6.2,.2,12,C["white"],True,PP_ALIGN.CENTER,"tip")
+    text(s,"三股潮水相遇",8.42,1.65,4.1,.78,32,C["ink"],True,budget="title")
+    text(s,"三条浪花碰在一起，\n像一只大大的蝴蝶。",8.42,2.8,4.1,1.25,24,C["ink"],False,budget="body")
     rect(s,8.42,4.5,4.15,.82,C["white"]); text(s,"你觉得它还像什么？",8.64,4.72,3.72,.32,18,C["red"],True,budget="tip")
     text(s,"选一条你最喜欢的新闻讲给大家听。",8.42,5.75,4.0,.6,15,C["muted"],True,budget="body")
-    source(s,"新闻与图片：中新网 · 2026年9月27日"); text(s,"2/2",11.75,7.02,.65,.22,9,C["muted"],True,PP_ALIGN.RIGHT,"small")
+    source(s,"新闻与图片：杭州网 · 2026年9月27日"); text(s,"2/2",11.75,7.02,.65,.22,9,C["muted"],True,PP_ALIGN.RIGHT,"small")
     return prs
 
 def main():
