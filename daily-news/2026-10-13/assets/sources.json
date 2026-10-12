@@ -1,0 +1,71 @@
+{
+  "share_date": "2026-10-13",
+  "weekday": "星期二",
+  "checked_on": "2026-10-12",
+  "weather": {
+    "date": "2026-10-13",
+    "condition": "多云转阴",
+    "low_c": 19,
+    "high_c": 27,
+    "source": "https://www.weather.com.cn/weather/101020100.shtml"
+  },
+  "news": [
+    {
+      "title": "大庆水边拍到两只天鹅",
+      "title_lines": "大庆水边拍到\n两只天鹅",
+      "body": [
+        "10月11日，大庆水边拍到了天鹅。",
+        "黑龙江的候鸟正在休息，准备往南飞。"
+      ],
+      "purpose": "我们一起爱护小鸟休息的地方。",
+      "caption": "图里：两只天鹅面对面，站在浅水里。",
+      "image": "swans.jpg",
+      "web_image": "swans.jpg",
+      "date": "2026-10-12",
+      "photo_date": "2026-10-11",
+      "publisher": "新华社",
+      "credit": "新华社发 / 池世永摄",
+      "url": "https://www.news.cn/gongyi/20261012/cad9b7978b3e4f7d84ff88145282c2f5/c.html",
+      "image_url": "https://www.news.cn/gongyi/20261012/cad9b7978b3e4f7d84ff88145282c2f5/20261012cad9b7978b3e4f7d84ff88145282c2f5_8bfb9f454a7c4075b9f6dccdce46bddd.JPG",
+      "color": "green"
+    },
+    {
+      "title": "海口湿地发现25只白眉鸭",
+      "title_lines": "海口湿地发现\n25只白眉鸭",
+      "body": [
+        "海口的湿地里，最近发现了25只白眉鸭。",
+        "看，这只小鸭的眼睛上方有一条白线。"
+      ],
+      "purpose": "我们可以看颜色和花纹，认识小动物。",
+      "caption": "图里：白眉鸭正在水里游。",
+      "image": "ducks.jpg",
+      "web_image": "ducks.jpg",
+      "date": "2026-10-12",
+      "photo_date": null,
+      "publisher": "海口日报（中新网转载）",
+      "credit": "海口日报 / 石中华、冯尔辉摄（原图联合署名）",
+      "url": "https://www.hi.chinanews.com.cn/hnnew/2026-10-12/747352.html",
+      "image_url": "https://www.hi.chinanews.com.cn/2026/1012/U585P16DT20261012085339.jpg",
+      "color": "peach"
+    },
+    {
+      "title": "上海机器人伸出双手搬箱子",
+      "title_lines": "上海机器人伸出\n双手搬箱子",
+      "body": [
+        "上海的展会上，机器人正在展示搬箱子。",
+        "工作人员说，它能搬不同种类的箱子。"
+      ],
+      "purpose": "原来，机器人可以帮人干活。",
+      "caption": "图里：机器人正用双手搬箱子。",
+      "image": "robot.jpg",
+      "web_image": "robot.jpg",
+      "date": "2026-10-12",
+      "photo_date": "2026-10-11",
+      "publisher": "中国新闻网",
+      "credit": "中新社 / 郑莹莹摄",
+      "url": "https://www.sh.chinanews.com.cn/bdrd/2026-10-12/150017.shtml",
+      "image_url": "https://www.sh.chinanews.com.cn/2026/1012/U580P939DT20261012141153.jpeg",
+      "color": "green"
+    }
+  ]
+}
