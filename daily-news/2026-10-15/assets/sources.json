@@ -34,23 +34,23 @@
       "color": "peach"
     },
     {
-      "topic": "鸟儿的乐园",
-      "title": "山西运城鸟群飞过盐湖湿地",
-      "title_lines": "山西运城鸟群\n飞过盐湖湿地",
+      "topic": "穿山的大工程",
+      "title": "西渝高铁四方山隧道贯通",
+      "title_lines": "西渝高铁四方山\n隧道顺利贯通",
       "body": [
-        "10月12日，许多鸟儿飞过运城盐湖湿地。",
-        "修复后的湿地，能让鸟儿吃东西和休息。"
+        "10月14日，重庆开州的四方山隧道顺利贯通。",
+        "它是西渝高铁的一部分，为以后按期通车打下基础。"
       ],
-      "purpose": "保护湿地，就是帮助鸟儿有地方生活。",
-      "caption": "图里：一群白色鸟儿正贴着水面飞。",
-      "image": "birds.png",
-      "web_image": "birds.png",
+      "purpose": "隧道贯通，就像从山的两边挖通了一条路。",
+      "caption": "图里：工程车从刚贯通的隧道里驶过。",
+      "image": "tunnel.png",
+      "web_image": "tunnel.png",
       "date": "2026-10-14",
-      "photo_date": "2026-10-12",
+      "photo_date": "2026-10-14",
       "publisher": "新华社",
-      "credit": "新华社发 / 薛俊摄",
-      "url": "https://www.news.cn/photo/20261014/5e06d1aece0f48e1bc115b8f400cd84f/c.html",
-      "image_url": "https://www.news.cn/photo/20261014/5e06d1aece0f48e1bc115b8f400cd84f/202610145e06d1aece0f48e1bc115b8f400cd84f_202610144e989e4efa6b4f75a427d2a66aebb29a.jpg",
+      "credit": "新华社记者 唐奕 摄",
+      "url": "https://www.news.cn/photo/20261014/0337e7cb334448a6961ccfb3e981c305/c.html",
+      "image_url": "https://www.news.cn/photo/20261014/0337e7cb334448a6961ccfb3e981c305/202610140337e7cb334448a6961ccfb3e981c305_202610142ca4f58606a44864a204739eb5864cf3.jpg",
       "color": "green"
     },
     {
