@@ -5,8 +5,10 @@
   "weather": {
     "date": "2026-10-15",
     "condition": "阴",
-    "low_c": 21,
-    "high_c": 25,
+    "low_c": 19,
+    "high_c": 24,
+    "checked_at": "2026-10-14T20:06:00+08:00",
+    "type": "预报",
     "source": "https://www.weather.com.cn/weather/101020100.shtml"
   },
   "news": [
@@ -15,7 +17,7 @@
       "title": "瑞典夜空拍到极光和火星",
       "title_lines": "瑞典夜空拍到\n极光和火星",
       "body": [
-        "10月10日，瑞典夜空出现了彩色极光。",
+        "瑞典夜空的彩色极光，被拍成了照片。",
         "照片里，火星正好在一群小星星旁边。"
       ],
       "purpose": "我们学会抬头观察天空里的不同光点。",
@@ -23,7 +25,8 @@
       "image": "aurora.png",
       "web_image": "aurora.png",
       "date": "2026-10-14",
-      "photo_date": "2026-10-10",
+      "photo_date": null,
+      "photo_date_note": "原文未注明拍摄日期；10月10日是太阳喷发影响抵达地球的日期，不是已确认的拍摄日期",
       "publisher": "NASA",
       "credit": "Petr Horálek、Josef Kujal、Vojan Höfer",
       "url": "https://science.nasa.gov/image-article/apod-2026-october-14-mars-and-the-beehive-under-an-aurora/",
