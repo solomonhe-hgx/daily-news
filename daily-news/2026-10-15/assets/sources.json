@@ -1,0 +1,74 @@
+{
+  "share_date": "2026-10-15",
+  "weekday": "星期四",
+  "checked_on": "2026-10-14",
+  "weather": {
+    "date": "2026-10-15",
+    "condition": "阴",
+    "low_c": 21,
+    "high_c": 25,
+    "source": "https://www.weather.com.cn/weather/101020100.shtml"
+  },
+  "news": [
+    {
+      "topic": "彩色的天空",
+      "title": "瑞典夜空拍到极光和火星",
+      "title_lines": "瑞典夜空拍到\n极光和火星",
+      "body": [
+        "10月10日，瑞典夜空出现了彩色极光。",
+        "照片里，火星正好在一群小星星旁边。"
+      ],
+      "purpose": "我们学会抬头观察天空里的不同光点。",
+      "caption": "图里：绿色和粉色极光挂在火星上方。",
+      "image": "aurora.png",
+      "web_image": "aurora.png",
+      "date": "2026-10-14",
+      "photo_date": "2026-10-10",
+      "publisher": "NASA",
+      "credit": "Petr Horálek、Josef Kujal、Vojan Höfer",
+      "url": "https://science.nasa.gov/image-article/apod-2026-october-14-mars-and-the-beehive-under-an-aurora/",
+      "image_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/october/2026_10_10_PZ_Jesli%C4%8Dky_01_1500px.png?w=1500&h=1000&fit=clip&crop=faces%2Cfocalpoint",
+      "color": "peach"
+    },
+    {
+      "topic": "鸟儿的乐园",
+      "title": "山西运城鸟群飞过盐湖湿地",
+      "title_lines": "山西运城鸟群\n飞过盐湖湿地",
+      "body": [
+        "10月12日，许多鸟儿飞过运城盐湖湿地。",
+        "修复后的湿地，能让鸟儿吃东西和休息。"
+      ],
+      "purpose": "保护湿地，就是帮助鸟儿有地方生活。",
+      "caption": "图里：一群白色鸟儿正贴着水面飞。",
+      "image": "birds.png",
+      "web_image": "birds.png",
+      "date": "2026-10-14",
+      "photo_date": "2026-10-12",
+      "publisher": "新华社",
+      "credit": "新华社发 / 薛俊摄",
+      "url": "https://www.news.cn/photo/20261014/5e06d1aece0f48e1bc115b8f400cd84f/c.html",
+      "image_url": "https://www.news.cn/photo/20261014/5e06d1aece0f48e1bc115b8f400cd84f/202610145e06d1aece0f48e1bc115b8f400cd84f_202610144e989e4efa6b4f75a427d2a66aebb29a.jpg",
+      "color": "green"
+    },
+    {
+      "topic": "雨后的惊喜",
+      "title": "山西壶口瀑布上空出现云海",
+      "title_lines": "山西壶口瀑布\n上空出现云海",
+      "body": [
+        "10月13日，壶口瀑布上空出现了大片云海。",
+        "白云在山沟里翻滚，无人机从高处拍下来。"
+      ],
+      "purpose": "云海不是海水，它是大片云雾。",
+      "caption": "图里：白云铺在黄河和山沟上方。",
+      "image": "cloud-sea.png",
+      "web_image": "cloud-sea.png",
+      "date": "2026-10-14",
+      "photo_date": "2026-10-13",
+      "publisher": "新华社",
+      "credit": "新华社发 / 刘宏达摄",
+      "url": "https://www.news.cn/photo/20261014/4ce125bacee74025957460148e0be0cb/c.html",
+      "image_url": "https://www.news.cn/photo/20261014/4ce125bacee74025957460148e0be0cb/202610144ce125bacee74025957460148e0be0cb_20261014313b7d0a7d744209a8233e013e8f24ab.jpg",
+      "color": "peach"
+    }
+  ]
+}
