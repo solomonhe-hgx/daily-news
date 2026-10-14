@@ -34,43 +34,45 @@
       "color": "peach"
     },
     {
-      "topic": "穿山的大工程",
-      "title": "西渝高铁四方山隧道贯通",
-      "title_lines": "西渝高铁四方山\n隧道顺利贯通",
+      "topic": "会巡逻的机器人",
+      "title": "安全机器人会提醒危险",
+      "title_lines": "安全机器人会\n提醒危险",
       "body": [
-        "10月14日，重庆开州的四方山隧道顺利贯通。",
-        "它是西渝高铁的一部分，为以后按期通车打下基础。"
+        "10月9日至10日，上海理工大学的机器人在展馆里做安全检查。",
+        "它能发现一些施工危险，还会用屏幕和声音提醒大家。"
       ],
-      "purpose": "隧道贯通，就像从山的两边挖通了一条路。",
-      "caption": "图里：工程车从刚贯通的隧道里驶过。",
-      "image": "tunnel.png",
-      "web_image": "tunnel.png",
+      "purpose": "机器人不只会表演，也能帮助工作人员守护安全。",
+      "caption": "图里：机器人在展馆里巡逻，并用屏幕发出安全提醒。",
+      "image": "safety-robot.png",
+      "web_image": "safety-robot.png",
       "date": "2026-10-14",
-      "photo_date": "2026-10-14",
-      "publisher": "新华社",
-      "credit": "新华社记者 唐奕 摄",
-      "url": "https://www.news.cn/photo/20261014/0337e7cb334448a6961ccfb3e981c305/c.html",
-      "image_url": "https://www.news.cn/photo/20261014/0337e7cb334448a6961ccfb3e981c305/202610140337e7cb334448a6961ccfb3e981c305_202610142ca4f58606a44864a204739eb5864cf3.jpg",
+      "photo_date": null,
+      "event_date": "2026-10-09至2026-10-10",
+      "publisher": "上海理工大学",
+      "credit": "黄中意 / 上海理工大学",
+      "url": "https://www.usst.edu.cn/2026/1013/c934a70469/page.htm",
+      "image_url": "https://www.usst.edu.cn/_upload/article/images/1f/bb/0261a7d24ecf98badb13549ff86d/e78bc55d-e3e9-475a-a9be-e47ee7a9c130.png",
       "color": "green"
     },
     {
-      "topic": "雨后的惊喜",
-      "title": "山西壶口瀑布上空出现云海",
-      "title_lines": "山西壶口瀑布\n上空出现云海",
+      "topic": "一起踢足球",
+      "title": "16支少年球队北京开赛",
+      "title_lines": "16支少年球队\n在北京开赛",
       "body": [
-        "10月13日，壶口瀑布上空出现了大片云海。",
-        "白云在山沟里翻滚，无人机从高处拍下来。"
+        "10月13日，16支11岁以下少年球队在北京参加足球邀请赛。",
+        "224名小球员会在比赛里练习传球、合作和友谊。"
       ],
-      "purpose": "云海不是海水，它是大片云雾。",
-      "caption": "图里：白云铺在黄河和山沟上方。",
-      "image": "cloud-sea.png",
-      "web_image": "cloud-sea.png",
+      "purpose": "足球不是一个人踢的，队友合作才能一起向前。",
+      "caption": "图里：小球员在场边和教练击掌。",
+      "image": "youth-football.jpg",
+      "web_image": "youth-football.jpg",
       "date": "2026-10-14",
-      "photo_date": "2026-10-13",
-      "publisher": "新华社",
-      "credit": "新华社发 / 刘宏达摄",
-      "url": "https://www.news.cn/photo/20261014/4ce125bacee74025957460148e0be0cb/c.html",
-      "image_url": "https://www.news.cn/photo/20261014/4ce125bacee74025957460148e0be0cb/202610144ce125bacee74025957460148e0be0cb_20261014313b7d0a7d744209a8233e013e8f24ab.jpg",
+      "photo_date": null,
+      "event_date": "2026-10-13",
+      "publisher": "北京市体育局",
+      "credit": "北京市体育局（页面未注明摄影者）",
+      "url": "https://tyj.beijing.gov.cn/bjsports/gzdt84/zwdt/744139258/index.html",
+      "image_url": "https://tyj.beijing.gov.cn/bjsports/gzdt84/zwdt/744139258/2026101414495537191.jpg",
       "color": "peach"
     }
   ]
