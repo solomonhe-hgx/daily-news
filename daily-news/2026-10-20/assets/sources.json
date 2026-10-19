@@ -1,0 +1,76 @@
+{
+  "share_date": "2026-10-20",
+  "weekday": "星期二",
+  "checked_on": "2026-10-19",
+  "weather": {
+    "date": "2026-10-20",
+    "condition": "小雨",
+    "low_c": 17,
+    "high_c": 28,
+    "checked_at": "2026-10-19T12:00:00+08:00",
+    "type": "预报",
+    "source": "https://www.weather.com.cn/weather/101020100.shtml"
+  },
+  "news": [
+    {
+      "topic": "网球场上的冠军",
+      "title": "郑钦文首夺中网冠军",
+      "title_lines": "郑钦文首夺\n中网冠军",
+      "body": [
+        "10月11日，郑钦文在北京拿到中国网球公开赛女单冠军。",
+        "她连赢7场比赛，第一次举起WTA1000级别的奖杯。"
+      ],
+      "purpose": "坚持练习就能离梦想更近。",
+      "caption": "图里：郑钦文在颁奖仪式上举起冠军奖杯。",
+      "image": "zheng-tennis.jpg",
+      "web_image": "zheng-tennis.jpg",
+      "date": "2026-10-11",
+      "photo_date": "2026-10-11",
+      "publisher": "新华社",
+      "credit": "新华社记者 孙非",
+      "url": "https://www.news.cn/sports/20261011/23897203a0b7443a97f29d3ba7e508fb/c.html",
+      "image_url": "https://www.news.cn/sports/20261011/23897203a0b7443a97f29d3ba7e508fb/I9wIoMRYO888Hkoj.jpg",
+      "color": "peach"
+    },
+    {
+      "topic": "飞向太空的火箭",
+      "title": "朱雀二号一次送十颗卫星上天",
+      "title_lines": "朱雀二号一次\n送十颗卫星上天",
+      "body": [
+        "10月14日晚上，朱雀二号火箭带着10颗卫星一起飞向太空。",
+        "这些卫星会在太空里帮忙做计算和通信。"
+      ],
+      "purpose": "火箭可以把很多卫星一起送到太空，让我们的生活更方便。",
+      "caption": "图里：朱雀二号火箭在夜晚发射升空，喷出明亮的火焰。",
+      "image": "zhuque-rocket.jpeg",
+      "web_image": "zhuque-rocket.jpeg",
+      "date": "2026-10-14",
+      "photo_date": "2026-10-14",
+      "publisher": "新华社（人民网/中国日报转载）",
+      "credit": "汪江波 摄",
+      "url": "https://www.news.cn/politics/20261014/4d4d572283a74f9dbf426d7be4219018/c.html",
+      "image_url": "https://img3.chinadaily.com.cn/images/202610/14/6acf886ce4b09a167286b8af.jpeg",
+      "color": "green"
+    },
+    {
+      "topic": "深海里的发现",
+      "title": "蛟龙号从深海带回石头和塑料",
+      "title_lines": "蛟龙号从深海\n带回石头和塑料",
+      "body": [
+        "蛟龙号潜水器下潜到4400米深的海底，带回了石头、泥巴和海水。",
+        "科学家还在海底发现了一块蓝色塑料片，提醒大家要爱护海洋。"
+      ],
+      "purpose": "深海里有很多秘密，我们也要保护海洋不被垃圾污染。",
+      "caption": "图里：蛟龙号潜水器完成下潜后被吊回海面。",
+      "image": "jiaolong-deepsea.png",
+      "web_image": "jiaolong-deepsea.png",
+      "date": "2026-10-13",
+      "photo_date": "2026-10-11",
+      "publisher": "新华社",
+      "credit": "新华社发",
+      "url": "http://www.news.cn/tech/20261013/ff035c4efbb044bf89c0e5fe94f21eb3/c.html",
+      "image_url": "http://www.news.cn/tech/20261013/ff035c4efbb044bf89c0e5fe94f21eb3/0qqsazYrDLl8qWlW.jpg",
+      "color": "peach"
+    }
+  ]
+}
