@@ -47,21 +47,23 @@
       "image_url": "https://www.news.cn/sports/20261022/ca0c3d0555aa4ee6b8f19a4d63e615eb/20261022ca0c3d0555aa4ee6b8f19a4d63e615eb_20261022579d7f281f0f49f9afef1d4f4740edac.jpg"
     },
     {
-      "topic": "未来的科技",
-      "title": "科学家发布十大前瞻技术",
+      "topic": "世界雪豹日",
+      "title": "雪豹的大尾巴像围巾",
       "body": [
-        "10月21日，在重庆的世界科技与发展论坛上，科学家发布了十大前瞻技术。",
-        "这些技术包括会自己做实验的AI、脑机接口、基因编辑等。"
+        "10月23日是世界雪豹日，新华社带大家认识住在高山上的雪豹。",
+        "雪豹有厚厚的毛和长长的尾巴，尾巴能帮它保持平衡，还能盖在身上保暖。"
       ],
-      "purpose": "这些新技术可能会改变我们的生活，让未来更美好。",
-      "caption": "图里：2026年世界科技与发展论坛在重庆举行。",
-      "image": "science-forum.jpg",
-      "date": "2026-10-21",
-      "photo_date": "2026-10-21",
-      "publisher": "中国新闻网",
-      "credit": "中新网",
-      "url": "https://www.news.cn/20261021/cbd9da7d046a4016a423b6092b16a940/c.html",
-      "image_url": "https://i2.chinanews.com.cn/simg/ypt/2026/261021/bc70a765-6a95-4708-a2d3-80b326e233a6_zsite.jpg"
+      "purpose": "想一想：雪豹的大尾巴还像什么？",
+      "caption": "图里：2026年在四川阿坝雪地中拍到的雪豹。",
+      "image": "snow-leopard-photo.jpg",
+      "animation": "snow-leopard.gif",
+      "date": "2026-10-23",
+      "photo_date": "2026",
+      "publisher": "新华社 / 国家林业和草原局",
+      "credit": "新华社资料图片",
+      "url": "https://www.forestry.gov.cn/c/www/lcdt/693241.jhtml",
+      "image_url": "https://www.forestry.gov.cn/u/cms/www/202610/23192022r439.jpg",
+      "animation_url": "https://www.forestry.gov.cn/u/cms/www/202610/23191646iutd.gif"
     }
   ]
 }

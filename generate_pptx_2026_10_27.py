@@ -51,12 +51,14 @@ NEWS = [
     },
     {
         "chip": "3 / 3",
-        "topic": "未来的科技",
-        "title": "科学家发布十大前瞻技术",
-        "body1": "10月21日，在重庆的世界科技与发展论坛上，科学家发布了十大前瞻技术。",
-        "body2": "这些技术包括会自己做实验的AI、脑机接口、基因编辑等。",
-        "purpose": "这些新技术可能会改变我们的生活，让未来更美好。",
-        "image": os.path.join(ASSETS_DIR, "science-forum.jpg"),
+        "topic": "世界雪豹日",
+        "title": "雪豹的大尾巴像围巾",
+        "body1": "住在高山",
+        "body2": "厚毛不怕冷",
+        "purpose": "大尾巴：走路稳，还能保暖",
+        "image": os.path.join(ASSETS_DIR, "snow-leopard-photo.jpg"),
+        "animation": os.path.join(ASSETS_DIR, "snow-leopard.gif"),
+        "special": "snow_leopard",
     },
 ]
 
@@ -154,7 +156,64 @@ def add_animation(slide, shape, delay_ms=0, duration_ms=500):
     child_tn_lst.append(parse_xml(anim_xml))
 
 
+def build_snow_leopard_slide(prs, news, slide_num):
+    """少字、图片为主的雪豹页；GIF在PowerPoint放映模式中自动播放。"""
+    s = prs.slides.add_slide(prs.slide_layouts[6])
+    bg = add_rect(s, 0, 0, 13.333, 7.5, PALETTE["bg"])
+
+    chip = add_rounded_rect(s, 0.6, 0.42, 1.1, 0.45, PALETTE["chip_bg"])
+    add_text(s, news["chip"], 0.6, 0.42, 1.1, 0.45,
+             size=14, bold=True, color=PALETTE["ink"], align=PP_ALIGN.CENTER)
+    topic = add_text(s, news["topic"], 1.9, 0.42, 3.0, 0.45,
+                     size=14, color=PALETTE["muted"])
+
+    photo_card = add_rounded_rect(s, 0.45, 1.0, 7.15, 5.75, PALETTE["card_bg"])
+    if os.path.exists(news["image"]):
+        photo = s.shapes.add_picture(news["image"], Inches(0.58), Inches(1.13), width=Inches(6.9))
+    else:
+        photo = add_text(s, "（雪豹照片未找到）", 0.7, 3.0, 6.5, 0.8,
+                         size=22, color=PALETTE["muted"], align=PP_ALIGN.CENTER)
+
+    title = add_text(s, news["title"], 7.9, 1.05, 4.9, 1.0,
+                     size=34, bold=True, color=PALETTE["ink"])
+
+    fact1_card = add_rounded_rect(s, 7.9, 2.25, 2.25, 0.72, PALETTE["chip_bg"])
+    fact1 = add_text(s, news["body1"], 8.0, 2.36, 2.05, 0.5,
+                     size=24, bold=True, color=PALETTE["ink"], align=PP_ALIGN.CENTER)
+
+    fact2_card = add_rounded_rect(s, 10.4, 2.25, 2.4, 0.72, PALETTE["chip_bg"])
+    fact2 = add_text(s, news["body2"], 10.5, 2.36, 2.2, 0.5,
+                     size=24, bold=True, color=PALETTE["ink"], align=PP_ALIGN.CENTER)
+
+    tail_card = add_rounded_rect(s, 7.9, 3.25, 4.9, 0.82, RGBColor(0xFF, 0xF6, 0xE5))
+    tail = add_text(s, news["purpose"], 8.05, 3.38, 4.6, 0.55,
+                    size=22, bold=True, color=PALETTE["accent"], align=PP_ALIGN.CENTER)
+
+    if os.path.exists(news["animation"]):
+        gif = s.shapes.add_picture(news["animation"], Inches(8.35), Inches(4.45), width=Inches(4.0))
+        gif_note = add_text(s, "放映时，小雪豹会走起来", 8.35, 6.1, 4.0, 0.35,
+                            size=13, color=PALETTE["muted"], align=PP_ALIGN.CENTER)
+    else:
+        gif = add_text(s, "雪豹走一走", 8.35, 5.1, 4.0, 0.6,
+                       size=20, color=PALETTE["muted"], align=PP_ALIGN.CENTER)
+        gif_note = gif
+
+    source = add_text(s, "新华社 / 国家林业和草原局 · 2026-10-23", 0.6, 7.0, 6.4, 0.3,
+                      size=9, color=PALETTE["muted"])
+    page = add_text(s, f"第{slide_num}页，共3页", 9.8, 7.0, 3.0, 0.3,
+                    size=10, color=PALETTE["muted"], align=PP_ALIGN.RIGHT)
+
+    add_animation(s, title, delay_ms=200, duration_ms=450)
+    add_animation(s, fact1_card, delay_ms=450, duration_ms=400)
+    add_animation(s, fact2_card, delay_ms=650, duration_ms=400)
+    add_animation(s, tail_card, delay_ms=850, duration_ms=450)
+    return s
+
+
 def build_news_slide(prs, news, slide_num):
+    if news.get("special") == "snow_leopard":
+        return build_snow_leopard_slide(prs, news, slide_num)
+
     s = prs.slides.add_slide(prs.slide_layouts[6])
 
     # Background
