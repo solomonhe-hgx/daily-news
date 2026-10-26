@@ -320,7 +320,7 @@ def main():
 
     out_dir = os.path.join(SCRIPT_DIR, "daily-news", "2026-10-27")
     os.makedirs(out_dir, exist_ok=True)
-    out = os.path.join(out_dir, "今日新闻-2026-10-27.pptx")
+    out = os.path.join(out_dir, "今日新闻-2026-10-27-完整修正版.pptx")
     save_pptx(prs, out)
     print("wrote", out)
 
