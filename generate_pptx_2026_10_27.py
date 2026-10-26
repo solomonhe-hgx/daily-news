@@ -53,9 +53,9 @@ NEWS = [
         "chip": "3 / 3",
         "topic": "世界雪豹日",
         "title": "雪豹的大尾巴像围巾",
-        "body1": "住在高山上",
-        "body2": "厚厚的皮毛",
-        "purpose": "大大的尾巴：走路稳，还能保暖",
+        "body1": "雪豹住在高山上。",
+        "body2": "它有厚厚的皮毛和大大的尾巴，走起路来很稳，而且还能保暖。",
+        "purpose": "想一想：雪豹的大尾巴还像什么？",
         "image": os.path.join(ASSETS_DIR, "snow-leopard-photo.jpg"),
         "animation": os.path.join(ASSETS_DIR, "snow-leopard.gif"),
         "special": "snow_leopard",
@@ -177,24 +177,24 @@ def build_snow_leopard_slide(prs, news, slide_num):
     title = add_text(s, news["title"], 7.9, 1.05, 4.9, 1.0,
                      size=34, bold=True, color=PALETTE["ink"])
 
-    fact1_card = add_rounded_rect(s, 7.9, 2.25, 2.25, 0.72, PALETTE["chip_bg"])
-    fact1 = add_text(s, news["body1"], 8.0, 2.36, 2.05, 0.5,
-                     size=24, bold=True, color=PALETTE["ink"], align=PP_ALIGN.CENTER)
+    fact1_card = add_rounded_rect(s, 7.9, 2.15, 4.9, 0.72, PALETTE["chip_bg"])
+    fact1 = add_text(s, news["body1"], 8.1, 2.27, 4.5, 0.48,
+                     size=24, bold=True, color=PALETTE["ink"], align=PP_ALIGN.LEFT)
 
-    fact2_card = add_rounded_rect(s, 10.4, 2.25, 2.4, 0.72, PALETTE["chip_bg"])
-    fact2 = add_text(s, news["body2"], 10.5, 2.36, 2.2, 0.5,
-                     size=24, bold=True, color=PALETTE["ink"], align=PP_ALIGN.CENTER)
+    fact2_card = add_rounded_rect(s, 7.9, 3.05, 4.9, 1.38, PALETTE["card_bg"])
+    fact2 = add_text(s, news["body2"], 8.12, 3.20, 4.45, 1.08,
+                     size=20, bold=False, color=PALETTE["ink"], align=PP_ALIGN.LEFT)
 
-    tail_card = add_rounded_rect(s, 7.9, 3.25, 4.9, 0.82, RGBColor(0xFF, 0xF6, 0xE5))
-    tail = add_text(s, news["purpose"], 8.05, 3.38, 4.6, 0.55,
-                    size=22, bold=True, color=PALETTE["accent"], align=PP_ALIGN.CENTER)
+    tail_card = add_rounded_rect(s, 7.9, 4.62, 4.9, 0.74, RGBColor(0xFF, 0xF6, 0xE5))
+    tail = add_text(s, news["purpose"], 8.05, 4.74, 4.6, 0.48,
+                    size=18, bold=True, color=PALETTE["accent"], align=PP_ALIGN.CENTER)
 
     if os.path.exists(news["animation"]):
-        gif = s.shapes.add_picture(news["animation"], Inches(8.35), Inches(4.45), width=Inches(4.0))
-        gif_note = add_text(s, "放映时，小雪豹会走起来", 8.35, 6.1, 4.0, 0.35,
-                            size=13, color=PALETTE["muted"], align=PP_ALIGN.CENTER)
+        gif = s.shapes.add_picture(news["animation"], Inches(8.85), Inches(5.55), width=Inches(3.0))
+        gif_note = add_text(s, "放映时，小雪豹会走起来", 8.35, 6.72, 4.0, 0.25,
+                            size=11, color=PALETTE["muted"], align=PP_ALIGN.CENTER)
     else:
-        gif = add_text(s, "雪豹走一走", 8.35, 5.1, 4.0, 0.6,
+        gif = add_text(s, "雪豹走一走", 8.35, 5.7, 4.0, 0.6,
                        size=20, color=PALETTE["muted"], align=PP_ALIGN.CENTER)
         gif_note = gif
 
