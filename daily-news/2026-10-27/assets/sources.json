@@ -1,0 +1,67 @@
+{
+  "share_date": "2026-10-27",
+  "weekday": "星期二",
+  "checked_on": "2026-10-26",
+  "weather": {
+    "date": "2026-10-27",
+    "condition": "阴转晴",
+    "low_c": 13,
+    "high_c": 20,
+    "checked_at": "2026-10-26T12:00:00+08:00",
+    "type": "预报",
+    "source": "https://www.weather.com.cn/weather/101020100.shtml"
+  },
+  "news": [
+    {
+      "topic": "太空里的互联网",
+      "title": "第28组卫星从海南飞上天",
+      "body": [
+        "10月25日，长征八号甲火箭从海南起飞，把第28组卫星送进太空。",
+        "这些卫星在天上组成一张大网，让偏远地方也能上网。"
+      ],
+      "purpose": "以后在很远很远的地方，也能用卫星上网课、看视频。",
+      "caption": "图里：长征八号甲火箭在海南发射场升空。",
+      "image": "satellite-launch.png",
+      "date": "2026-10-25",
+      "photo_date": "2026-10-25",
+      "publisher": "新华社/北京日报",
+      "credit": "北京日报客户端",
+      "url": "https://www.news.cn/politics/20261025/3573644b269e466f83510360cb84eff4/c.html",
+      "image_url": "https://static.bjd.com.cn/dams-res/editing/image/202610/25/6add7ab9d5de1af8723da55a.png"
+    },
+    {
+      "topic": "体操世锦赛",
+      "title": "中国体操队时隔20年再夺世界冠军",
+      "body": [
+        "在荷兰鹿特丹，中国女子体操队拿了世锦赛团体冠军。",
+        "这是中国队时隔20年再夺这个冠军，上次夺冠还是2006年。"
+      ],
+      "purpose": "团队合作和坚持练习，就能离梦想更近。",
+      "caption": "图里：中国女子体操队在颁奖仪式上。",
+      "image": "gymnastics-team-1.png",
+      "date": "2026-10-22",
+      "photo_date": "2026-10-22",
+      "publisher": "新华社",
+      "credit": "新华社记者 翁忻旸",
+      "url": "https://www.news.cn/sports/20261022/ca0c3d0555aa4ee6b8f19a4d63e615eb/c.html",
+      "image_url": "https://www.news.cn/sports/20261022/ca0c3d0555aa4ee6b8f19a4d63e615eb/20261022ca0c3d0555aa4ee6b8f19a4d63e615eb_20261022579d7f281f0f49f9afef1d4f4740edac.jpg"
+    },
+    {
+      "topic": "未来的科技",
+      "title": "科学家发布十大前瞻技术",
+      "body": [
+        "10月21日，在重庆的世界科技与发展论坛上，科学家发布了十大前瞻技术。",
+        "这些技术包括会自己做实验的AI、脑机接口、基因编辑等。"
+      ],
+      "purpose": "这些新技术可能会改变我们的生活，让未来更美好。",
+      "caption": "图里：2026年世界科技与发展论坛在重庆举行。",
+      "image": "science-forum.jpg",
+      "date": "2026-10-21",
+      "photo_date": "2026-10-21",
+      "publisher": "中国新闻网",
+      "credit": "中新网",
+      "url": "https://www.news.cn/20261021/cbd9da7d046a4016a423b6092b16a940/c.html",
+      "image_url": "https://i2.chinanews.com.cn/simg/ypt/2026/261021/bc70a765-6a95-4708-a2d3-80b326e233a6_zsite.jpg"
+    }
+  ]
+}
