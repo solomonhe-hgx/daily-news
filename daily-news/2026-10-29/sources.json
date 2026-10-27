@@ -1,0 +1,67 @@
+{
+  "share_date": "2026-10-29",
+  "weekday": "星期四",
+  "checked_on": "2026-10-27",
+  "weather": {
+    "date": "2026-10-29",
+    "condition": "阴转小雨",
+    "low_c": 16,
+    "high_c": 21,
+    "checked_at": "2026-10-27T17:35:00+08:00",
+    "type": "预报",
+    "source": "https://www.weather.com.cn/weather/101020100.shtml"
+  },
+  "news": [
+    {
+      "topic": "亚洲残疾人运动会",
+      "title": "中国运动员在日本拿了207块金牌",
+      "body": [
+        "10月24日，第4届亚洲残疾人运动会在日本结束了。",
+        "中国代表团拿了207块金牌，一共435块奖牌，连续第五次排第一。"
+      ],
+      "purpose": "残疾人运动员也很努力，他们用行动告诉我们：坚持就能做到。",
+      "caption": "图里：中国代表团走进第4届亚残运会开幕式会场。",
+      "image": "para-games-china.jpeg",
+      "date": "2026-10-24",
+      "photo_date": "2026-10-24",
+      "publisher": "新华社",
+      "credit": "新华社记者 贾浩成",
+      "url": "https://www.news.cn/sports/20261024/7bcc3c711f574b00a6789a551a55e3d5/c.html",
+      "image_url": "https://www.news.cn/sports/20261024/7bcc3c711f574b00a6789a551a55e3d5/7bcc3c711f574b00a6789a551a55e3d5_2026102408647c80a4e84da3b8f5e73e56f0a0c2.jpeg"
+    },
+    {
+      "topic": "超级工程",
+      "title": "世界最长跨海铁路大桥合龙了",
+      "body": [
+        "10月20日，杭州湾跨海铁路大桥的北航道桥合龙了。",
+        "这座大桥全长29.2公里，是世界上最大的跨海铁路桥，火车以后可以开350公里。"
+      ],
+      "purpose": "以后从上海到宁波，坐火车很快就能到。",
+      "caption": "图里：杭州湾跨海铁路大桥的航拍全景，大桥横跨在海面上。",
+      "image": "bridge-closing.jpg",
+      "date": "2026-10-20",
+      "photo_date": "2026-10-20",
+      "publisher": "科技日报",
+      "credit": "科技日报记者 都芃",
+      "url": "http://www.news.cn/20261020/dcbc4217fb984a8c917764c81ffa979f/c.html",
+      "image_url": "https://www.stdaily.com/web/gdxw/pic/2026-10/20/599396_e9e4d071-00bc-40a8-b116-09582d2c66b2copy.jpg"
+    },
+    {
+      "topic": "科学新发现",
+      "title": "贵州发现了2亿多年前的\"海怪\"",
+      "body": [
+        "科学家在贵州发现了一种叫\"海异螈\"的远古动物化石。",
+        "它生活在2.37亿年前，是第一个完全在海里生活的两栖动物。"
+      ],
+      "purpose": "以前科学家以为两栖动物不能一直住在海里，这个发现改变了他们的想法。",
+      "caption": "图里：海异螈在海底捕食的复原图，它有扁平的身体和厚重的骨甲。",
+      "image": "sea-amphibian-fossil.jpg",
+      "date": "2026-10-27",
+      "photo_date": "2026-10-27",
+      "publisher": "新华社",
+      "credit": "陈庚 绘 / 贵州省地质博物馆供图",
+      "url": "https://www.news.cn/politics/20261027/0e988e32cddb4b34835c5fd95ce3a40e/c.html",
+      "image_url": "https://i2.chinanews.com.cn/simg/ypt/2026/261027/95df29ee-acdf-4b20-b8a9-d916240168d2_zsite.jpg"
+    }
+  ]
+}
