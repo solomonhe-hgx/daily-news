@@ -1,0 +1,67 @@
+{
+  "share_date": "2026-11-03",
+  "weekday": "星期二",
+  "checked_on": "2026-11-01",
+  "weather": {
+    "date": "2026-11-03",
+    "condition": "小雨",
+    "low_c": 16,
+    "high_c": 20,
+    "checked_at": "2026-11-01T18:10:00+08:00",
+    "type": "预报",
+    "source": "https://www.weather.com.cn/weather/101020100.shtml"
+  },
+  "news": [
+    {
+      "topic": "国际合作",
+      "title": "大熊猫\u201c冉冉\u201d将去比利时",
+      "body": [
+        "10月26日，大熊猫\u201c冉冉\u201d从四川出发，坐飞机去比利时。",
+        "中国和比利时一起保护大熊猫已经很多年了，\u201c冉冉\u201d是去交新朋友的。"
+      ],
+      "purpose": "大熊猫是中国的国宝，全世界一起保护它们，说明大家都爱护动物。",
+      "caption": "大熊猫\u201c冉冉\u201d准备出发去比利时。",
+      "image": "panda-ranran-belgium.jpg",
+      "date": "2026-10-26",
+      "photo_date": "2026-10-26",
+      "publisher": "中国新闻网",
+      "credit": "中国大熊猫保护研究中心供图",
+      "url": "https://www.chinanews.com.cn/gj/2026/10-26/10720988.shtml",
+      "image_url": "http://q3.itc.cn/q_70/images03/20261026/d1bd37a05a474573847d372e1165acf9.jpeg"
+    },
+    {
+      "topic": "重大活动",
+      "title": "世界上最大的\u201c购物博览会\u201d又要上海开展了",
+      "body": [
+        "11月5日，第九届中国国际进口博览会要在上海国家会展中心开幕了。",
+        "来自全世界的好多公司带来了最厉害的新发明，有会跳舞的机器人，还有会发光的牙刷。"
+      ],
+      "purpose": "这个博览会让全世界的好东西都来到中国，我们在家门口就能看到最新的科技。",
+      "caption": "上海国家会展中心被布置得像一朵巨大的四叶草。",
+      "image": "ciie-2026-shanghai.jpg",
+      "date": "2026-10-30",
+      "photo_date": "2026-10-29",
+      "publisher": "新华社",
+      "credit": "新华社记者",
+      "url": "https://www.ciie.org/zbh/cn/2024/medium-item3/20261030/65055.html",
+      "image_url": "http://p.statickksmg.com/cont/2026/10/29/cover3616mac0863d7018e5b83ee7d9f8c5e3cba71931793259155016_73e29603-cc15-3acb-adae-781d03a4a6ff.jpeg"
+    },
+    {
+      "topic": "体育纪录",
+      "title": "游泳冠军们在北京打破了多项纪录",
+      "body": [
+        "10月29日，全国短池游泳锦标赛在北京\u201c水立方\u201d结束了。",
+        "张雨霏姐姐在50米自由泳比赛中游了23秒72，打破了全国纪录，其他好多选手也破了新纪录。"
+      ],
+      "purpose": "运动员们不断练习，就能变得更快更强。你有没有练习什么本领，想过要打破纪录？",
+      "caption": "全国短池游泳锦标赛在\u201c水立方\u201d举行，选手们在泳池中奋力拼搏。",
+      "image": "swimming-championship-2026.jpg",
+      "date": "2026-10-29",
+      "photo_date": "2026-10-28",
+      "publisher": "新华社",
+      "credit": "新华社记者",
+      "url": "http://www.news.cn/sports/20261029/9d368b67dea047798acda99c86e603a9/c.html",
+      "image_url": "http://imgpai.thepaper.cn/newpai/image/1793068011019_r8iBhQ_1793068015421.jpg?x-oss-process=image/resize,w_1024"
+    }
+  ]
+}
