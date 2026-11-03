@@ -1,0 +1,67 @@
+{
+  "share_date": "2026-11-05",
+  "weekday": "星期四",
+  "checked_on": "2026-11-03",
+  "weather": {
+    "date": "2026-11-05",
+    "condition": "阴转多云",
+    "low_c": 14,
+    "high_c": 19,
+    "checked_at": "2026-11-03T18:00:00+08:00",
+    "type": "预报",
+    "source": "https://www.weather.com.cn/weather/101020100.shtml"
+  },
+  "news": [
+    {
+      "topic": "科技突破",
+      "title": "中国造出超级快的"光计算机"",
+      "body": [
+        "11月2日，在浙江乌镇的世界互联网大会上，科学家展示了"九章四号"光量子计算机。",
+        "它能操控三千多个光子的状态，算题速度比最快的超级计算机还要快很多很多倍。"
+      ],
+      "purpose": "量子计算机就像用光来做计算的超级大脑，将来能帮我们解决很多现在解决不了的难题。",
+      "caption": ""九章四号"光量子计算原型机，用光来做超级计算。",
+      "image": "quantum-jiuzhang-sihao.jpg",
+      "date": "2026-11-02",
+      "photo_date": "2026-05-14",
+      "publisher": "央视新闻",
+      "credit": "CCTV 13 新闻",
+      "url": "https://news.ustc.edu.cn/info/1056/96808.htm",
+      "image_url": "http://p1.img.cctvpic.com/fmspic/2026/05/14/0f7c4e894b8a430b897875a9337102e9-1.jpg"
+    },
+    {
+      "topic": "体育纪录",
+      "title": "举重冠军裴鑫依四次打破世界纪录",
+      "body": [
+        "11月1日，在浙江宁波举行的世界举重锦标赛上，裴鑫依姐姐在女子61公斤级比赛中四次打破世界纪录。",
+        "她举起了142公斤的杠铃，比原来的世界纪录还重了3公斤，拿到了三块金牌。"
+      ],
+      "purpose": "运动员们每天坚持训练，才能一次次超越自己、打破纪录。你平时有坚持练习什么本领吗？",
+      "caption": "裴鑫依（中）在举重世锦赛女子61公斤级颁奖仪式上。",
+      "image": "peixinyi-weightlifting.jpg",
+      "date": "2026-11-01",
+      "photo_date": "2026-11-01",
+      "publisher": "国家体育总局",
+      "credit": "2026世界举重锦标赛组委会",
+      "url": "https://www.sports.cn/tcdt/tcjsby/2026/1102/713326.html",
+      "image_url": "http://q9.itc.cn/q_70/images03/20261101/bf7d6144eefd4dbab9f5a634d7739f8f.jpeg"
+    },
+    {
+      "topic": "航天探索",
+      "title": "长征火箭把28组卫星送上了太空",
+      "body": [
+        "10月25日，长征八号甲火箭从海南发射场升空，把28组卫星送上了太空。",
+        "这些卫星要组成一张太空互联网，让偏远地区也能用上又快又好的网络。"
+      ],
+      "purpose": "卫星互联网就像在天上建了一座看不见的桥，把全世界连在一起。",
+      "caption": "长征八号甲运载火箭在海南商业航天发射场点火升空。",
+      "image": "satellite-internet-launch.jpg",
+      "date": "2026-10-25",
+      "photo_date": "2026-10-25",
+      "publisher": "新华社",
+      "credit": "新华社",
+      "url": "https://www.news.cn/politics/20261025/3573644b269e466f83510360cb84eff4/c.html",
+      "image_url": "http://b0.bdstatic.com/3b63d78ac16016db45cbddabd8015ed4.jpg"
+    }
+  ]
+}
