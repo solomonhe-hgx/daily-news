@@ -1,0 +1,67 @@
+{
+  "share_date": "2026-11-10",
+  "weekday": "星期二",
+  "checked_on": "2026-11-08",
+  "weather": {
+    "date": "2026-11-10",
+    "condition": "多云转阴",
+    "low_c": 10,
+    "high_c": 15,
+    "checked_at": "2026-11-08T18:00:00+08:00",
+    "type": "预报",
+    "source": "https://www.weather.com.cn/weather/101020100.shtml"
+  },
+  "news": [
+    {
+      "topic": "重大事件·科技创新",
+      "title": "进博会上机器人会泡茶",
+      "body": [
+        "11月5日，第九届进博会在上海开幕，展出了480多件新科技产品。",
+        "现场有个机器人会泡茶，还有高铁模拟驾驶舱，让大家体验当司机的感觉。"
+      ],
+      "purpose": "这些科技产品展示了未来的生活方式，想想你长大后可能会用到什么神奇的东西。",
+      "caption": "进博会上，仿人机器人正在展示茶艺。",
+      "image": "ciie-robot-tea.jpg",
+      "date": "2026-11-05",
+      "photo_date": "2026-11-06",
+      "publisher": "人民网",
+      "credit": "人民网",
+      "url": "http://pic.people.com.cn/n1/2026/1106/c1016-40828955.html",
+      "image_url": "http://pic.people.com.cn/NMediaFile/2026/1106/MAIN1793927525234EJ3DZNNLSW.jpg"
+    },
+    {
+      "topic": "考古发现",
+      "title": "北京发现了隋朝的长城",
+      "body": [
+        "考古学家在北京昌平发现了一座隋朝时期修建的长城戍堡。",
+        "他们出土了隋朝的钱币和古代砖瓦，这些文物帮助确认了长城的年代。"
+      ],
+      "purpose": "原来北京也有古老的长城，你想去看看这些考古发现吗？",
+      "caption": "北京昌平大岭沟发现的隋代长城戍堡遗址。",
+      "image": "greatwall-sui-beijing.jpg",
+      "date": "2026-11-02",
+      "photo_date": "2026-10-12",
+      "publisher": "北京日报",
+      "credit": "北京日报",
+      "url": "https://xinwen.bjd.com.cn/content/s6ae7c272e4b0e42f8f025738.html",
+      "image_url": "https://static.bjd.com.cn/dams-res/editing/image/202611/02/6ae7bf0bd5de1af87240fbe9.jpg"
+    },
+    {
+      "topic": "重大工程",
+      "title": "黄河80年治理取得大成就",
+      "body": [
+        "从1946年到2026年，人们花了80年治理黄河，建起了5万多座水利工程。",
+        "黄河用全国2%的水，养活了12%的人口、灌溉了17%的农田，还创造了14%的全国经济财富。"
+      ],
+      "purpose": "调水调沙就像给黄河"洗澡"，用水把泥沙冲走，不让河床变高、洪水泛滥，这是世界水利工程中的创举。",
+      "caption": "小浪底水利枢纽调水调沙现场，泥沙翻滚如瀑布。",
+      "image": "yellow-river-xiaolangdi.jpg",
+      "date": "2026-11-06",
+      "photo_date": "2026-06-22",
+      "publisher": "新华社",
+      "credit": "新华社",
+      "url": "https://www.news.cn/politics/20260622/a5a97ebeb6b5443abbee373c2651250b/c.html",
+      "image_url": "https://www.news.cn/politics/20260622/a5a97ebeb6b5443abbee373c2651250b/p3bXjjqcExzQclvD.jpeg"
+    }
+  ]
+}
