@@ -1,15 +1,16 @@
 {
   "share_date": "2026-11-10",
   "weekday": "星期二",
-  "checked_on": "2026-11-08",
+  "checked_on": "2026-11-09",
   "weather": {
     "date": "2026-11-10",
-    "condition": "多云转阴",
-    "low_c": 10,
+    "condition": "多云",
+    "low_c": 9,
     "high_c": 15,
-    "checked_at": "2026-11-08T18:00:00+08:00",
+    "checked_at": "2026-11-09T20:00:00+08:00",
     "type": "预报",
-    "source": "https://www.weather.com.cn/weather/101020100.shtml"
+    "source": "http://sh.cma.gov.cn/sh/tqyb/wrtqyb/",
+    "source_name": "上海中心气象台 2026年11月09日16时发布"
   },
   "news": [
     {
@@ -53,7 +54,7 @@
         "从1946年到2026年，人们花了80年治理黄河，建起了5万多座水利工程。",
         "黄河用全国2%的水，养活了12%的人口、灌溉了17%的农田，还创造了14%的全国经济财富。"
       ],
-      "purpose": "调水调沙就像给黄河"洗澡"，用水把泥沙冲走，不让河床变高、洪水泛滥，这是世界水利工程中的创举。",
+      "purpose": "调水调沙就像给黄河“洗澡”，用水把泥沙冲走，不让河床变高、洪水泛滥，这是世界水利工程中的创举。",
       "caption": "小浪底水利枢纽调水调沙现场，泥沙翻滚如瀑布。",
       "image": "yellow-river-xiaolangdi.jpg",
       "date": "2026-11-06",
