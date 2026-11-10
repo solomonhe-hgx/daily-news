@@ -1,0 +1,68 @@
+{
+  "share_date": "2026-11-12",
+  "weekday": "星期四",
+  "checked_on": "2026-11-10",
+  "weather": {
+    "date": "2026-11-12",
+    "condition": "阴转小雨",
+    "low_c": 16,
+    "high_c": 21,
+    "checked_at": "2026-11-10T18:00:00+08:00",
+    "type": "预报",
+    "source": "https://www.nmc.cn/publish/forecast/ASH/shanghai.html",
+    "source_name": "中央气象台 2026年11月10日发布"
+  },
+  "news": [
+    {
+      "topic": "体育纪录",
+      "title": "中国体操队夺得青奥会历史首枚女团金牌",
+      "body": [
+        "11月9日，在达喀尔青奥会上，中国女子体操队拿到了青奥会历史上第一枚女子团体金牌。",
+        "谢谷英、钟圻、陈紫嫣三位小将在决赛里顶住压力，最后以0.234分的微弱优势赢了日本队。"
+      ],
+      "purpose": "这是中国体操在青奥会上的第一次女团冠军，三位大姐姐告诉我们：团结合作就能创造历史。",
+      "caption": "中国女子体操队在达喀尔青奥会领奖台上，手举国旗庆祝夺金。",
+      "image": "youth-olympics-gymnastics.jpg",
+      "date": "2026-11-09",
+      "photo_date": "2026-11-09",
+      "publisher": "新华社",
+      "credit": "新华社",
+      "url": "https://www.news.cn/sports/20261110/bebf40fd02784388a854fc744092bba8/c.html",
+      "image_url": "https://www.news.cn/sports/20261110/bebf40fd02784388a854fc744092bba8/c.html"
+    },
+    {
+      "topic": "科学突破",
+      "title": "中国科学家找到太阳"发烧"的原因",
+      "body": [
+        "太阳外面有一层叫"日冕"的大气，它的温度比太阳表面高几百万度，科学家一直想不明白为什么。",
+        "中国科学家孙伟和团队用激光在实验室里模拟了太阳上的"磁重联"现象，证明这就是让日冕变热的原因。"
+      ],
+      "purpose": "这个发现帮助我们理解了太阳为什么会"发烧"，也让我们更了解宇宙中恒星的秘密。",
+      "caption": "日全食时拍摄的太阳日冕照片（左）与磁场模拟图（右）。",
+      "image": "corona-heating.jpg",
+      "date": "2026-11-09",
+      "photo_date": "2026-11-09",
+      "publisher": "光明日报",
+      "credit": "科学网",
+      "url": "https://tech.gmw.cn/2026-11/09/content_39091830.htm",
+      "image_url": "https://rmtzx.sciencenet.cn/kxwsprint/693a53b2e4b078fce44a282c.jpeg"
+    },
+    {
+      "topic": "重大工程",
+      "title": "厦金大桥海上主线桥贯通",
+      "body": [
+        "11月10日，连接厦门和金门的厦金大桥完成了海上主线桥的合龙，一块3300多吨的巨型钢结构被精准吊装到位。",
+        "这座大桥海上部分超过14公里，双向8车道，设计时速100公里，预计年底建成通车。"
+      ],
+      "purpose": "大桥通车后，厦门和金门之间的往来会更加方便，两地居民可以更快地见面。",
+      "caption": "厦金大桥（厦门段）海上主线桥贯通航拍图。",
+      "image": "xiajin-bridge.jpg",
+      "date": "2026-11-10",
+      "photo_date": "2026-11-10",
+      "publisher": "中新网",
+      "credit": "中国日报",
+      "url": "https://www.chinanews.com.cn/sh/2026/11-10/10729180.shtml",
+      "image_url": "http://img3.chinadaily.com.cn/images/202611/10/6af2db22e4b0e1427c733182.jpeg"
+    }
+  ]
+}
