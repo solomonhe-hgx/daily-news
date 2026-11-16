@@ -30,7 +30,7 @@ FONT_BODY = "Microsoft YaHei"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ASSETS_DIR = os.path.join(SCRIPT_DIR, "daily-news", "2026-11-17", "assets")
 
-# ---------- 统一文案（与网页逐句一致） ----------
+# ---------- 统 一 文 案（与 网 页 逐 句 一 致） ----------
 NEWS = [
     {
         "chip": "1 / 3",
@@ -54,7 +54,7 @@ NEWS = [
         "chip": "3 / 3",
         "topic": '体育·电子竞技',
         "title": '中国战队拿了世界冠军',
-        "body1": '11月14日，中国战队BLG在美国纽约赢了最后一场比赛，拿到了世界冠军。',
+        "body1": '11月14日，中国战队BLG在美国纽约赢了最后一场比赛，获得了英雄联盟游戏世界冠军。',
         "body2": '队员一起捧起了亮闪闪的奖杯，大家都开心地跳了起来。',
         "purpose": '五个人像一支小队伍一样互相配合，才能赢得比赛。',
         "image": os.path.join(ASSETS_DIR, 'esports-blg.jpg'),
