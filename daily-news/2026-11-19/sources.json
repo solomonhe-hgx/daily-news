@@ -1,0 +1,70 @@
+{
+  "share_date": "2026-11-19",
+  "weekday": "星期四",
+  "checked_on": "2026-11-17",
+  "weather": {
+    "date": "2026-11-19",
+    "condition": "晴到多云",
+    "low_c": 6,
+    "high_c": 12,
+    "checked_at": "2026-11-17T16:00:00+08:00",
+    "type": "预报",
+    "source": "http://sh.cma.gov.cn/sh/tqyb/#fiveday",
+    "source_name": "上海中心气象台 2026年11月17日10时发布"
+  },
+  "news": [
+    {
+      "topic": "自然·珍稀鸟类",
+      "title": "湿地里飞来了“彩虹鸟”",
+      "body": [
+        "近日，在重庆汉丰湖的湿地里，人们发现了一种很稀有的鸟，它的名字叫彩鹮。",
+        "彩鹮的羽毛在太阳下一闪一闪，能变出绿色、紫色和金色的光，就像一道彩虹。"
+      ],
+      "purpose": "湿地的水越干净，就越能引来漂亮的鸟儿安家。",
+      "caption": "红外相机在重庆汉丰湖湿地拍到的彩鹮，正在浅水里找吃的。",
+      "image": "caihuan-ibis.jpg",
+      "date": "2026-11-17",
+      "photo_date": "2026-11",
+      "publisher": "开州区自然保护地管理中心（搜狐号发布）",
+      "credit": "新华社",
+      "url": "https://www.sohu.com/a/1102544074_121106884/",
+      "image_url": "https://q6.itc.cn/q_70/images03/20261117/f96cc8e0ce9e42cbae4b0703fdae2318.jpeg",
+      "question": null
+    },
+    {
+      "topic": "科技·深海钻探",
+      "title": "“梦想”号大船破了世界纪录",
+      "body": [
+        "11月17日，我国的大船“梦想”号在2000多米深的海上完成了钻探任务，破了世界纪录。",
+        "“梦想”号是专门钻海底的大船，本领特别大，把最高的山放进去都露不出头。"
+      ],
+      "purpose": "大海底下藏着好多秘密，等着大船一点一点去发现。",
+      "caption": "“梦想”号大洋钻探船在海上航行（无人机照片）。",
+      "image": "mengxiang-ship.jpg",
+      "date": "2026-11-17",
+      "photo_date": "2026-11",
+      "publisher": "央广网（自然资源部中国地质调查局发布）",
+      "credit": "自然资源部中国地质调查局",
+      "url": "https://china.cnr.cn/gdgg/20261117/t20261117_527875149.shtml",
+      "image_url": "https://mediabluk.cnr.cn/img/cnr/CNRCDP/2026/1116/ba7f0d1a84eb49e2a390650c455fab4310.png"
+    },
+    {
+      "topic": "文化·多彩校园",
+      "title": "香格里拉的小朋友会好多本领",
+      "body": [
+        "11月16日，在云南香格里拉的一所小学里，小朋友们课后一起排练唱歌、跳民族舞。",
+        "他们还学着做藏香、捏泥巴小罐、画花脸谱，不同民族的小朋友像一家人。"
+      ],
+      "purpose": "大家在一起学本领、做朋友，日子过得又开心又热闹。",
+      "caption": "11月16日，香格里拉市民族小学的学生在课后排练合唱。",
+      "image": "shangri-la-school.jpg",
+      "date": "2026-11-16",
+      "photo_date": "2026-11-16",
+      "publisher": "新华网（新浪财经转载）",
+      "credit": "新华社记者 彭奕凯 摄",
+      "url": "https://finance.sina.com.cn/jjxw/2026-11-17/doc-iniyyeuv5832089.shtml",
+      "image_url": "http://dingyue.ws.126.net/2026/1117/09698d6aj00tomgy000wqd000sg00izg.jpg",
+      "question": null
+    }
+  ]
+}
