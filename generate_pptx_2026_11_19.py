@@ -31,33 +31,36 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ASSETS_DIR = os.path.join(SCRIPT_DIR, "daily-news", "2026-11-19", "assets")
 
 # ---------- 统一文案（与网页逐句一致） ----------
+LQ = "\u201c"  # left curly double quote
+RQ = "\u201d"  # right curly double quote
+
 NEWS = [
     {
         "chip": "1 / 3",
-        "topic": '自然·珍稀鸟类',
-        "title": '湿地里飞来了“彩虹鸟”',
-        "body1": '近日，在重庆汉丰湖的湿地里，人们发现了一种很稀有的鸟，它的名字叫彩鹮。',
-        "body2": '彩鹮的羽毛在太阳下一闪一闪，能变出绿色、紫色和金色的光，就像一道彩虹。',
-        "purpose": '湿地的水越干净，就越能引来漂亮的鸟儿安家。',
-        "image": os.path.join(ASSETS_DIR, 'caihuan-ibis.jpg'),
+        "topic": "科技\u00b7深海钻探",
+        "title": f"{LQ}梦想{RQ}号大船破了世界纪录",
+        "body1": f"11月17日，我国的{LQ}梦想{RQ}号大洋钻探船在南海2000多米深的海底完成了钻探任务，破了世界纪录。",
+        "body2": "这艘船能把钻头伸到海底很深的地方，带回来海底的石头和泥土，帮科学家研究地球的秘密。",
+        "purpose": "大海底下藏着好多秘密，这艘大船帮我们去发现。",
+        "image": os.path.join(ASSETS_DIR, "mengxiang-ship.jpg"),
     },
     {
         "chip": "2 / 3",
-        "topic": '科技·深海钻探',
-        "title": '“梦想”号大船破了世界纪录',
-        "body1": '11月17日，我国的大船“梦想”号在2000多米深的海上完成了钻探任务，破了世界纪录。',
-        "body2": '“梦想”号是专门钻海底的大船，本领特别大，把最高的山放进去都露不出头。',
-        "purpose": '大海底下藏着好多秘密，等着大船一点一点去发现。',
-        "image": os.path.join(ASSETS_DIR, 'mengxiang-ship.jpg'),
+        "topic": "科技\u00b7人工智能",
+        "title": "APEC大会来了好多机器人",
+        "body1": "11月15日，在深圳举行的APEC大会上，出现了很多聪明的人形机器人。",
+        "body2": "它们会听人说话，帮忙端茶送水，还能在传送带上快速分拣东西，像未来小帮手。",
+        "purpose": "机器人越来越聪明，以后可以帮人类做更多事情。",
+        "image": os.path.join(ASSETS_DIR, "apec-robot.jpg"),
     },
     {
         "chip": "3 / 3",
-        "topic": '文化·多彩校园',
-        "title": '香格里拉的小朋友会好多本领',
-        "body1": '11月16日，在云南香格里拉的一所小学里，小朋友们课后一起排练唱歌、跳民族舞。',
-        "body2": '他们还学着做藏香、捏泥巴小罐、画花脸谱，不同民族的小朋友像一家人。',
-        "purpose": '大家在一起学本领、做朋友，日子过得又开心又热闹。',
-        "image": os.path.join(ASSETS_DIR, 'shangri-la-school.jpg'),
+        "topic": "能源\u00b7环保新办法",
+        "title": f"天上有个巨型{LQ}捕风伞{RQ}能发电",
+        "body1": f"在内蒙古的大草原上，科学家放飞了一个5000平方米的巨型{LQ}捕风伞{RQ}，比五层楼还大。",
+        "body2": "它飞到高高的天上捕捉更强的风，用绳子拉动地面的机器发电，干净又不污染空气。",
+        "purpose": "风是免费的能源，用新办法捕风发电，以后可以给更多家庭用。",
+        "image": os.path.join(ASSETS_DIR, "bufengsan-wind.jpg"),
     },
 ]
 
@@ -150,7 +153,8 @@ def add_animation(slide, shape, delay_ms=0, duration_ms=500):
               <p:stCondLst><p:cond delay="0"/></p:stCondLst>
             </p:cT><p:tgtEl><p:spTgt spid="{shape_id}"/></p:tgtEl>
             <p:attrNameLst><p:attrName>style.visibility</p:attrName></p:attrNameLst>
-          </p:cBhvr><p:to><p:strVal val="visible"/></p:to></p:set>
+            </p:cBhvr><p:to><p:strVal val="visible"/></p:to>
+          </p:set>
           <p:animEffect transition="in" filter="fade">
             <p:cBhvr><p:cT id="{5 + len(child_tn_lst)}" dur="{duration_ms}"/>
             <p:tgtEl><p:spTgt spid="{shape_id}"/></p:tgtEl></p:cBhvr>
@@ -213,7 +217,7 @@ def build_news_slide(prs, news, slide_num):
              size=18, bold=True, color=PALETTE["accent"])
 
     # Footer
-    footer_left = add_text(s, "小小新闻播报 · 2026年11月19日 星期四", 0.6, 7.0, 6.0, 0.35,
+    footer_left = add_text(s, "小小新闻播报 \u00b7 2026年11月19日 星期四", 0.6, 7.0, 6.0, 0.35,
              size=10, color=PALETTE["muted"])
     footer_right = add_text(s, f"第{slide_num}页，共3页", 7.5, 7.0, 5.3, 0.35,
              size=10, color=PALETTE["muted"], align=PP_ALIGN.RIGHT)
