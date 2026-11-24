@@ -63,68 +63,9 @@ jobs:
               }
 
               const deadline = Date.now() + 600000;
-              phase = '核查当前提交的已有部署';
-              let existingStatus;
-              while (Date.now() < deadline) {
-                try {
-                  const { data } = await github.request('GET /repos/{owner}/{repo}/pages/deployments/{deploymentId}', {
-                    ...context.repo,
-                    deploymentId: context.sha,
-                    request: { timeout: 15000 }
-                  });
-                  existingStatus = data.status;
-                } catch (error) {
-                  if (error.status !== 404) throw error;
-                  if (Number(process.env.GITHUB_RUN_ATTEMPT || '1') > 1) {
-                    core.setFailed('重跑时无法确认先前执行是否已创建部署；未再次创建');
-                    return;
-                  }
-                  existingStatus = 'not_found';
-                }
-                if (existingStatus === 'succeed') {
-                  const { data: site } = await github.request('GET /repos/{owner}/{repo}/pages', context.repo);
-                  if (typeof site.html_url !== 'string') {
-                    core.setFailed('已有部署成功，但站点URL尚未确认；未重复创建');
-                    return;
-                  }
-                  core.setOutput('page_url', site.html_url);
-                  core.info(`当前提交已有成功部署：${site.html_url}`);
-                  return;
-                }
-                if (existingStatus === 'not_found' || failed.has(existingStatus)) break;
-                await pause();
-              }
-              if (Date.now() >= deadline) {
-                core.setFailed('当前提交已有部署状态未定；未重复创建');
+              if (Number(process.env.GITHUB_RUN_ATTEMPT || '1') > 1) {
+                core.setFailed('此任务已执行过；请先确认已有部署状态，不自动重复创建');
                 return;
-              }
-              const previousId = context.payload.before;
-              if (typeof previousId === 'string' && /^[0-9a-f]{40}$/.test(previousId) && !/^0{40}$/.test(previousId)) {
-                phase = '核查前次部署';
-                while (Date.now() < deadline) {
-                  let previousStatus;
-                  try {
-                    const { data } = await github.request('GET /repos/{owner}/{repo}/pages/deployments/{deploymentId}', {
-                      ...context.repo,
-                      deploymentId: previousId,
-                      request: { timeout: 15000 }
-                    });
-                    previousStatus = data.status;
-                  } catch (error) {
-                    if (error.status === 404) {
-                      core.info('前次提交没有已登记的Pages部署');
-                      break;
-                    }
-                    throw error;
-                  }
-                  core.info(`前次部署状态：${previousStatus}`);
-                  if (previousStatus === 'succeed' || failed.has(previousStatus)) break;
-                  await pause();
-                }
-                if (Date.now() >= deadline) {
-                  core.setFailed('前次部署状态仍未确认；未重复创建部署');
-                  return;
-                }
               }
 
               phase = 'OIDC验证';
@@ -137,7 +78,6 @@ jobs:
                 artifact_id: artifactId,
                 pages_build_version: context.sha,
                 oidc_token: oidcToken,
-                environment: 'github-pages',
                 request: { timeout: 30000 }
               });
               if (deployment.id == null || typeof deployment.page_url !== 'string') {
@@ -158,6 +98,11 @@ jobs:
                     request: { timeout: 15000 }
                   });
                   status = data.status;
+                  if (typeof status !== 'string') {
+                    core.setFailed(`部署${deploymentId}的状态响应缺少status字段；未重复创建`);
+                    return;
+                  }
+                  core.info(`Pages部署状态：${status}`);
                   errors = 0;
                 } catch (error) {
                   if (error.name === 'TypeError') throw error;
