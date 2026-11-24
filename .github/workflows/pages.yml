@@ -56,6 +56,18 @@ jobs:
             ]);
             let phase = '准备';
             try {
+              if (context.payload.before === '31629c599bdcc50c510438e289c58719c42299ae') {
+                const { data } = await github.request('GET /repos/{owner}/{repo}/pages/deployments/{deploymentId}', {
+                  ...context.repo,
+                  deploymentId: context.payload.before,
+                  request: { timeout: 15000 }
+                });
+                const message = String(data.error?.message || data.error_message || data.message || '')
+                  .replace(/https?:\/\/\S+/g, '[链接已隐藏]')
+                  .replace(/\beyJ[A-Za-z0-9_.-]+\b/g, '[凭据已隐藏]');
+                core.setFailed(`只读部署诊断：${JSON.stringify({ status: data.status, code: data.error?.code || data.error_code || data.code || '', message, fields: Object.keys(data) })}；未创建新部署`);
+                return;
+              }
               const artifactId = Number(process.env.PAGES_ARTIFACT_ID);
               if (!Number.isSafeInteger(artifactId) || artifactId <= 0) {
                 core.setFailed('上传步骤没有返回有效产物ID；未创建部署');
