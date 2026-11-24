@@ -19,11 +19,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  upload:
     runs-on: ubuntu-latest
+    outputs:
+      artifact_id: ${{ steps.upload.outputs.artifact_id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,12 +35,24 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: daily-news
-      - name: Deploy Pages by uploaded artifact ID
+  deploy:
+    needs: upload
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Verify artifact and deploy Pages
         id: deployment
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
         timeout-minutes: 12
         env:
-          PAGES_ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+          PAGES_ARTIFACT_ID: ${{ needs.upload.outputs.artifact_id }}
         with:
           debug: false
           retries: 0
@@ -56,29 +67,41 @@ jobs:
             ]);
             let phase = '准备';
             try {
-              if (context.payload.before === '31629c599bdcc50c510438e289c58719c42299ae') {
-                const { data } = await github.request('GET /repos/{owner}/{repo}/pages/deployments/{deploymentId}', {
-                  ...context.repo,
-                  deploymentId: context.payload.before,
-                  request: { timeout: 15000 }
-                });
-                const message = String(data.error?.message || data.error_message || data.message || '')
-                  .replace(/https?:\/\/\S+/g, '[链接已隐藏]')
-                  .replace(/\beyJ[A-Za-z0-9_.-]+\b/g, '[凭据已隐藏]');
-                core.setFailed(`只读部署诊断：${JSON.stringify({ status: data.status, code: data.error?.code || data.error_code || data.code || '', message, fields: Object.keys(data) })}；未创建新部署`);
-                return;
-              }
-              const artifactId = Number(process.env.PAGES_ARTIFACT_ID);
-              if (!Number.isSafeInteger(artifactId) || artifactId <= 0) {
-                core.setFailed('上传步骤没有返回有效产物ID；未创建部署');
-                return;
-              }
-
-              const deadline = Date.now() + 600000;
               if (Number(process.env.GITHUB_RUN_ATTEMPT || '1') > 1) {
                 core.setFailed('此任务已执行过；请先确认已有部署状态，不自动重复创建');
                 return;
               }
+              const artifactId = Number(process.env.PAGES_ARTIFACT_ID);
+              if (!Number.isSafeInteger(artifactId) || artifactId <= 0) {
+                core.setFailed('上传作业没有返回有效产物ID；未创建部署');
+                return;
+              }
+
+              phase = '核验已上传产物';
+              let artifact;
+              for (let attempt = 0; attempt < 6; attempt++) {
+                try {
+                  const response = await github.request('GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}', {
+                    ...context.repo,
+                    artifact_id: artifactId,
+                    request: { timeout: 15000 }
+                  });
+                  artifact = response.data;
+                  break;
+                } catch (error) {
+                  if (error.status !== 404 || attempt === 5) throw error;
+                  await pause();
+                }
+              }
+              if (Number(artifact.id) !== artifactId || artifact.name !== 'github-pages' || artifact.expired !== false || !(artifact.size_in_bytes > 0)) {
+                core.setFailed('上传产物的ID、名称、有效期或大小不符合要求；未创建部署');
+                return;
+              }
+              if (String(artifact.workflow_run?.id) !== String(context.runId) || artifact.workflow_run?.head_sha !== context.sha) {
+                core.setFailed('产物不属于当前工作流运行及提交；未创建部署');
+                return;
+              }
+              core.info(`产物已核验：ID ${artifact.id}，${artifact.size_in_bytes}字节`);
 
               phase = 'OIDC验证';
               const oidcToken = await core.getIDToken();
@@ -100,6 +123,7 @@ jobs:
               const deploymentId = String(deployment.id);
               core.info(`Pages部署ID：${deploymentId}`);
               phase = '查询部署状态';
+              const deadline = Date.now() + 600000;
               let errors = 0;
               while (Date.now() < deadline) {
                 let status;
@@ -139,6 +163,5 @@ jobs:
               }
               core.setFailed(`部署${deploymentId}监测超时；远端状态未知，未取消或重复创建`);
             } catch (error) {
-              const httpStatus = Number(error?.status) || '未知';
-              core.setFailed(`${phase}失败（HTTP ${httpStatus}，${error.name || 'Error'}）；未重试创建，请先核验远端状态`);
+              core.setFailed(`${phase}失败（HTTP ${Number(error.status) || '未知'}，${error.name || 'Error'}）；未重试创建`);
             }
