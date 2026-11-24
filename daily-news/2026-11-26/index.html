@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>今日新闻｜2026年11月26日 星期四</title>
+  <style>
+    :root{--paper:#fffaf0;--ink:#254537;--accent:#a63f27;--muted:#52665b;--white:#fff;--line:#d7e2d4;--wash:#eaf2e5;--warm:#fff2dc}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+    main{max-width:1500px;margin:auto;padding:24px 32px}header{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:20px}
+    .brand{font-weight:800;font-size:26px}.meta{font-size:17px;line-height:1.65}.weather{font-size:17px;line-height:1.5;text-align:right;max-width:570px}.weather a{color:inherit}.weather small{display:block;font-size:13px}
+    .toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:16px 0}.toolbar a,button{display:inline-block;border:1px solid var(--line);background:var(--white);color:var(--ink);padding:12px 18px;font:inherit;font-weight:700;border-radius:10px;text-decoration:none;cursor:pointer}
+    button:hover,a:hover{border-color:var(--accent)}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}button[aria-pressed="true"]{background:var(--ink);color:var(--white)}button:disabled{opacity:.5;cursor:default}.hint{font-size:14px;color:var(--muted)}
+    article{background:var(--white);padding:28px;border:1px solid var(--line);border-radius:20px}.story-head{display:flex;gap:12px;align-items:center;font-size:18px;margin-bottom:16px}.chip{padding:6px 12px;background:var(--wash);font-weight:800}
+    h1{font-size:clamp(32px,3vw,46px);line-height:1.3;margin:0 0 22px;font-weight:800}.story-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:32px;align-items:start}figure{margin:0}figure img{width:100%;height:clamp(310px,35vw,475px);object-fit:contain;background:var(--wash);display:block}
+    figcaption{font-size:16px;line-height:1.55;margin-top:10px}.credit{display:block;font-size:14px;color:var(--muted)}.copy p{font-size:clamp(25px,2.25vw,32px);line-height:1.65;margin:0 0 18px}.copy .purpose{padding:14px 18px;background:var(--warm);color:var(--accent);font-weight:700;font-size:clamp(24px,2vw,29px)}
+    .purpose-label{font-size:16px;display:block;margin-bottom:4px}details{background:var(--white);border:1px solid var(--line);padding:18px 22px;margin-top:18px;border-radius:12px}summary{font-size:19px;font-weight:700;cursor:pointer}details p,details li{font-size:20px;line-height:1.8}details li{margin:12px 0}.source-row{font-size:15px;line-height:1.8}.source-row a{color:var(--accent);overflow-wrap:anywhere}.sources-note{font-size:14px;color:var(--muted)}footer{font-size:14px;line-height:1.8;margin:20px 0;color:var(--muted)}footer a{color:inherit}.error{font-size:24px;color:var(--accent)}[hidden]{display:none!important}
+    @media(max-width:850px){main{padding:18px}header{display:block}.weather{text-align:left;margin-top:12px}.story-grid{grid-template-columns:1fr;gap:20px}article{padding:20px}figure img{height:auto;max-height:480px}.copy p{font-size:26px}.toolbar button,.toolbar a{padding:10px 13px}}
+    @media print{.toolbar,details,footer,.hint{display:none}article{break-after:page;border:0}.story-grid{grid-template-columns:1fr 1fr}header{display:block}.weather{text-align:left}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div><div class="brand">小小新闻播报</div><div class="meta">分享日：2026年11月26日 星期四<br>幼儿园大班 · 看图片，说新闻，分享新发现</div></div>
+    <div class="weather">上海｜11月26日 星期四｜白天多云，夜间晴｜9—19℃
+      <small>分享日预报 · 上海中心气象台11月24日10:00发布</small>
+      <small><a href="http://sh.cma.gov.cn/sh/tqyb/wrtqyb/" target="_blank" rel="noopener noreferrer">来源：上海市气象局</a> · 查询：11月24日12:10（北京时间）</small>
+    </div>
+  </header>
+  <nav class="toolbar" aria-label="选择新闻">
+    <button type="button" data-select="0" aria-pressed="true">1 · 铁路桥梁</button>
+    <button type="button" data-select="1" aria-pressed="false">2 · 文化手工</button>
+    <button type="button" data-select="2" aria-pressed="false">3 · 社区互助</button>
+    <button type="button" id="fullscreen">全屏展示</button>
+    <a href="今日新闻-2026-11-26.pptx">下载三页PPT</a>
+  </nav>
+  <p class="hint">左右方向键或下方按钮翻页，每次展示一条；展开讲稿练习，三条分享安排为5—10分钟。</p>
+  <div id="stories" aria-live="polite"><p class="hint">正在读取本期新闻……</p></div>
+  <nav class="toolbar" aria-label="翻页"><button type="button" id="previous">上一条</button><span id="counter" class="meta"></span><button type="button" id="next">下一条</button><a href="../index.html">固定最新入口</a></nav>
+  <details>
+    <summary>老师／家长提示：怎样分享5—10分钟</summary>
+    <p>开场先说分享日期、上海和天气。每条先看图，读两句新闻，再让两位小朋友回答问题；讲慢一点，给大家思考和回答的空间。最后问：“今天你最想把哪条新闻讲给家人听？”</p>
+    <p>练习安排：开场与结尾合计约1分钟；每条看图、讲述与互动约2分钟。互动问题没有唯一答案，不强迫发言。讲稿中的生活比喻是辅助科普，不当作新闻事实。</p>
+    <p class="sources-note">天气是查询时的预报，分享前请再次查看。图片为新闻原报道现场或成果图，保留来源、摄影署名与原图水印；版权归原机构及作者。</p>
+  </details>
+  <footer>新闻核验：2026年11月24日（北京时间）。工程与互助报道在查询前24小时内；手工比赛官网只显示11月23日，按7天内补充。<a href="sources.json">完整来源与统一文案</a> · <a href="../2026-11-24/">周二一期</a></footer>
+</main>
+<script>
+'use strict';
+let selected = 0;
+let loaded = false;
+const container = document.getElementById('stories');
+const make = (tag, className, text) => {const node = document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node;};
+const link = (url, text) => {const node=make('a','',text);node.href=url;node.target='_blank';node.rel='noopener noreferrer';return node;};
+function show(index){
+  if(!loaded)return;
+  selected=Math.max(0,Math.min(2,index));
+  document.querySelectorAll('.news-section').forEach((node,i)=>{node.hidden=i!==selected;});
+  document.querySelectorAll('[data-select]').forEach((node,i)=>node.setAttribute('aria-pressed',String(i===selected)));
+  document.getElementById('counter').textContent=`第 ${selected+1} 条 / 共 3 条`;
+  document.getElementById('previous').disabled=selected===0;
+  document.getElementById('next').disabled=selected===2;
+  history.replaceState(null,'',`#news-${selected+1}`);
+}
+fetch('sources.json').then(response=>{if(!response.ok)throw new Error('来源文件读取失败');return response.json();}).then(data=>{
+  container.replaceChildren();
+  data.news.forEach((news,i)=>{
+    const section=make('section','news-section');section.id=news.id;section.hidden=i!==0;
+    const article=make('article','story');article.setAttribute('aria-labelledby',`title-${i+1}`);
+    const head=make('div','story-head');head.append(make('span','chip',`${i+1} / 3`),make('span','',news.topic));article.append(head);
+    const title=make('h1','headline',news.title);title.id=`title-${i+1}`;article.append(title);
+    const grid=make('div','story-grid');const figure=make('figure');const image=make('img');image.src=`assets/${news.image}`;image.alt=news.caption;image.loading=i===0?'eager':'lazy';
+    const caption=make('figcaption','',news.caption);caption.append(make('span','credit',news.credit));figure.append(image,caption);
+    const copy=make('div','copy');news.body.forEach(sentence=>copy.append(make('p','sentence',sentence)));
+    const purpose=make('p','purpose');purpose.append(make('span','purpose-label',news.purpose_label),make('span','purpose-text',news.purpose));copy.append(purpose);grid.append(figure,copy);article.append(grid);section.append(article);
+    const practice=make('details','practice');practice.append(make('summary','','练习讲稿 · 停顿提示 · 简单提问（默认折叠）'));
+    const intro=make('p','',`完整讲述：${news.title}。${news.body.join('')}${news.purpose}`);practice.append(intro);
+    const list=make('ol');news.practice.forEach(line=>list.append(make('li','',line)));practice.append(list);section.append(practice);
+    const source=make('details','sources');source.append(make('summary','','新闻、图片与核验信息（给老师和家长）'));
+    const facts=make('p','source-row',`发生日期：${news.event_date}；报道：${news.reported_at}；地点：${news.location}；机构：${news.organization}。`);source.append(facts);
+    const original=make('p','source-row');original.append(link(news.url,`原报道：${news.publisher} · ${news.original_title}`));source.append(original);
+    if(news.corroborating_url){const cross=make('p','source-row');cross.append(link(news.corroborating_url,'交叉核实来源'));source.append(cross);}
+    const photo=make('p','source-row');photo.append(link(news.image_url,`原图：${news.credit} · 拍摄日期 ${news.photo_date}`));source.append(photo,make('p','sources-note',news.verification),make('p','sources-note',news.rights_note));section.append(source);container.append(section);
+  });
+  loaded=true;
+  const match=location.hash.match(/^#news-([123])$/);show(match?Number(match[1])-1:0);
+}).catch(()=>{container.replaceChildren(make('p','error','本期新闻读取失败，请刷新页面或打开来源文件；不要把旧页面当作本期。'));});
+document.querySelectorAll('[data-select]').forEach(button=>button.addEventListener('click',()=>show(Number(button.dataset.select))));
+document.getElementById('previous').addEventListener('click',()=>show(selected-1));
+document.getElementById('next').addEventListener('click',()=>show(selected+1));
+document.addEventListener('keydown',event=>{if(event.altKey||event.ctrlKey||event.metaKey||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName))return;if(event.key==='ArrowRight'){event.preventDefault();show(selected+1);}if(event.key==='ArrowLeft'){event.preventDefault();show(selected-1);}});
+document.getElementById('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else document.getElementById('fullscreen').textContent='请使用浏览器全屏功能';}catch{document.getElementById('fullscreen').textContent='请使用浏览器全屏功能';}});
+document.addEventListener('fullscreenchange',()=>{document.getElementById('fullscreen').textContent=document.fullscreenElement?'退出全屏':'全屏展示';});
+</script>
+</body>
+</html>
