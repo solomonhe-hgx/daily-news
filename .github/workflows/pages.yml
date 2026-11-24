@@ -32,9 +32,90 @@ jobs:
         with:
           enablement: true
       - name: Upload site
+        id: upload
         uses: actions/upload-pages-artifact@v3
         with:
           path: daily-news
-      - name: Deploy Pages
+      - name: Deploy Pages by uploaded artifact ID
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        timeout-minutes: 12
+        env:
+          PAGES_ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+        with:
+          debug: false
+          retries: 0
+          script: |
+            const pause = () => new Promise(resolve => setTimeout(resolve, 5000));
+            const failed = new Set([
+              'deployment_failed',
+              'deployment_perms_error',
+              'deployment_content_failed',
+              'deployment_cancelled',
+              'deployment_lost'
+            ]);
+            let phase = '准备';
+            try {
+              const artifactId = Number(process.env.PAGES_ARTIFACT_ID);
+              if (!Number.isSafeInteger(artifactId) || artifactId <= 0) {
+                core.setFailed('上传步骤没有返回有效产物ID；未创建部署');
+                return;
+              }
+
+              phase = 'OIDC验证';
+              const oidcToken = await core.getIDToken();
+              core.setSecret(oidcToken);
+
+              phase = '创建部署';
+              const { data: deployment } = await github.rest.repos.createPagesDeployment({
+                ...context.repo,
+                artifact_id: artifactId,
+                pages_build_version: context.sha,
+                oidc_token: oidcToken,
+                environment: 'github-pages',
+                request: { timeout: 30000 }
+              });
+              if (deployment.id == null || typeof deployment.page_url !== 'string') {
+                core.setFailed('创建部署的响应不完整；不得自动重复创建');
+                return;
+              }
+
+              const deploymentId = String(deployment.id);
+              core.info(`Pages部署ID：${deploymentId}`);
+              phase = '查询部署状态';
+              const deadline = Date.now() + 600000;
+              let errors = 0;
+              while (Date.now() < deadline) {
+                let status;
+                try {
+                  const { data } = await github.rest.repos.getPagesDeployment({
+                    ...context.repo,
+                    pages_deployment_id: deploymentId,
+                    request: { timeout: 15000 }
+                  });
+                  status = data.status;
+                  errors = 0;
+                } catch {
+                  if (++errors >= 10) {
+                    core.setFailed(`部署${deploymentId}连续查询失败；远端状态未知`);
+                    return;
+                  }
+                  await pause();
+                  continue;
+                }
+                if (status === 'succeed') {
+                  core.setOutput('page_url', deployment.page_url);
+                  core.info(`发布成功：${deployment.page_url}`);
+                  return;
+                }
+                if (failed.has(status)) {
+                  core.setFailed(`部署${deploymentId}失败：${status}`);
+                  return;
+                }
+                await pause();
+              }
+              core.setFailed(`部署${deploymentId}监测超时；远端状态未知，未取消或重复创建`);
+            } catch (error) {
+              const httpStatus = Number(error?.status) || '未知';
+              core.setFailed(`${phase}失败（HTTP ${httpStatus}）；未重试创建，请先核验远端状态`);
+            }
